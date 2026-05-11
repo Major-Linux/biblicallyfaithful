@@ -1,0 +1,40 @@
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Georgia, serif;
+      background: #1a1a2e;
+      color: #f0e6d3;
+    }
+    nav {
+      background: #12122a;
+      padding: 1rem 2rem;
+      display: flex;
+      gap: 2rem;
+    }
+    nav a {
+      color: #c9a84c;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+    nav a:hover { text-decoration: underline; }
+    main {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #c9a84c;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+      border-top: 1px solid #333;
+      font-size: 0.9rem;
+      opacity: 0.6;
+    }
