@@ -85,3 +85,25 @@
       font-size: 0.9rem;
       opacity: 0.6;
     }
+
+  .read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #c9a84c;
+    text-decoration: none;
+    font-size: 1rem;
+    border: 1px solid #c9a84c;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+  }
+
+  .read-more:hover {
+    background: #c9a84c;
+    color: #1a1a2e;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #333;
+    margin: 2rem 0;
+  }
