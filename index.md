@@ -6,7 +6,7 @@ title: Welcome
 # Welcome to Biblically Faithful
 
 This site is dedicated to exploring the Bible with faithfulness and integrity.
-
+Dev branch test.
 ---
 
 ## Latest Articles
