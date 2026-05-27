@@ -1,6 +1,7 @@
 ---
 layout: base.njk
 title: Articles
+templateEngineOverride: njk,md
 ---
 
 # Articles

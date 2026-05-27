@@ -1,6 +1,8 @@
 export default function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css");
+  eleventyConfig.addPassthroughCopy("images");
 
+  // Date filter
   eleventyConfig.addFilter("postDate", (date) => {
     return new Date(date).toLocaleDateString("en-GB", {
       year: "numeric",
@@ -9,6 +11,34 @@ export default function(eleventyConfig) {
     });
   });
 
+  // Video card shortcode
+  eleventyConfig.addShortcode("videocard", (id, title, summary, runtime, date) => {
+    return `
+      <div class="video-card">
+        <div class="video-card__player">
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/${id}"
+              title="${title}"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+        <div class="video-card__details">
+          <h3 class="video-card__title">${title}</h3>
+          <p class="video-card__summary">${summary}</p>
+          <ul class="video-card__meta">
+            ${runtime ? `<li><span class="meta-label">⏱ Runtime</span> ${runtime}</li>` : ''}
+            ${date ? `<li><span class="meta-label">📅 Published</span> ${date}</li>` : ''}
+          </ul>
+        </div>
+      </div>
+    `;
+  });
+
+  // Articles collection sorted by date
   eleventyConfig.addCollection("articles", function(collectionApi) {
     return collectionApi.getFilteredByTag("articles").sort((a, b) => {
       return b.date - a.date;

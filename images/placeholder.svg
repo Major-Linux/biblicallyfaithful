@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#1a1a2e"/>
+  <rect x="340" y="180" width="120" height="90" rx="8" fill="#c9a84c" opacity="0.3"/>
+  <text x="400" y="260" font-family="Georgia, serif" font-size="18" fill="#c9a84c" text-anchor="middle">Featured Image</text>
+</svg>
