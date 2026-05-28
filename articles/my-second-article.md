@@ -3,6 +3,9 @@ title: My Second Article
 date: 2026-05-12
 image: /images/placeholder.svg
 synopsis: A second article added to test the articles listing page, exploring how Eleventy automatically orders content by date.
+tags:
+  - articles
+  - church
 ---
 
 ## Introduction

@@ -1,0 +1,25 @@
+---
+layout: base.njk
+---
+
+<div class="category-header">
+  <span class="bento__label">Category</span>
+  <h1>{{ title }}</h1>
+  <p class="category-count">{{ collections[collection].length }} article{% if collections[collection].length != 1 %}s{% endif %}</p>
+</div>
+
+{% if collections[collection].length %}
+  {% for post in collections[collection] %}
+    <article class="post-item">
+      <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+      <p class="date">{{ post.date | postDate }}</p>
+      {% if post.data.synopsis %}
+        <p class="bento__synopsis">{{ post.data.synopsis }}</p>
+      {% endif %}
+    </article>
+  {% endfor %}
+{% else %}
+  <p>No articles in this category yet.</p>
+{% endif %}
+
+<a href="/articles/" class="read-more">← Back to all articles</a>

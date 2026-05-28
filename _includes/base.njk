@@ -18,6 +18,16 @@
       <a href="/">Home</a>
       <a href="/about/">About</a>
       <a href="/articles/">Articles</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown__trigger">Categories ▾</button>
+        <div class="nav-dropdown__menu">
+          <a href="/categories/bible/">Bible</a>
+          <a href="/categories/church/">Church</a>
+          <a href="/categories/creation/">Creation</a>
+          <a href="/categories/end-times/">End Times</a>
+          <a href="/categories/redemption/">Redemption</a>
+        </div>
+      </div>
       <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
     </div>
   </nav>
@@ -27,20 +37,20 @@
   <footer>
     <p>&copy; 2026 Biblically Faithful. All rights reserved.</p>
   </footer>
+  
+
   <script>
+    // ── Theme Toggle ──
     const toggle = document.getElementById('theme-toggle');
     const root = document.documentElement;
 
-    // Check saved preference or system preference
     const saved = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const isDark = saved ? saved === 'dark' : prefersDark;
 
-    // Apply theme on load
     root.setAttribute('data-theme', isDark ? 'dark' : 'light');
     toggle.textContent = isDark ? '☀️' : '🌙';
 
-    // Toggle on button click
     toggle.addEventListener('click', () => {
       const current = root.getAttribute('data-theme');
       const next = current === 'dark' ? 'light' : 'dark';
@@ -48,6 +58,31 @@
       localStorage.setItem('theme', next);
       toggle.textContent = next === 'dark' ? '☀️' : '🌙';
     });
+
+    // ── Categories Dropdown ──
+    const trigger = document.querySelector('.nav-dropdown__trigger');
+    const menu = document.querySelector('.nav-dropdown__menu');
+
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menu.classList.toggle('is-open');
+      trigger.textContent = menu.classList.contains('is-open') ? 'Categories ▴' : 'Categories ▾';
+    });
+
+    // Close dropdown when clicking anywhere else on the page
+    document.addEventListener('click', () => {
+      menu.classList.remove('is-open');
+      trigger.textContent = 'Categories ▾';
+    });
+
+    // Close dropdown when a menu link is clicked
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('is-open');
+        trigger.textContent = 'Categories ▾';
+      });
+    });
   </script>
+
 </body>
 </html>

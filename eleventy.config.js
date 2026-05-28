@@ -38,10 +38,20 @@ export default function(eleventyConfig) {
     `;
   });
 
-  // Articles collection sorted by date
+  // Main articles collection sorted by date
   eleventyConfig.addCollection("articles", function(collectionApi) {
     return collectionApi.getFilteredByTag("articles").sort((a, b) => {
       return b.date - a.date;
+    });
+  });
+
+  // Category collections
+  const categories = ["bible", "church", "creation", "end-times", "redemption"];
+  categories.forEach(category => {
+    eleventyConfig.addCollection(category, function(collectionApi) {
+      return collectionApi.getFilteredByTag(category).sort((a, b) => {
+        return b.date - a.date;
+      });
     });
   });
 

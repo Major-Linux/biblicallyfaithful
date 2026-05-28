@@ -3,6 +3,9 @@ title: My First Article
 date: 2026-05-11
 image: /images/placeholder.svg
 synopsis: An introduction to the Biblically Faithful website, exploring what the Bible says about grace and how it applies to everyday life as a believer.
+tags:
+  - articles
+  - bible
 ---
 
 ## Introduction
