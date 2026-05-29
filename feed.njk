@@ -1,0 +1,29 @@
+---
+permalink: feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <title>Biblically Faithful</title>
+  <subtitle>Honouring the Bible, Honouring God</subtitle>
+  <link href="https://biblicallyfaithful.org/feed.xml" rel="self"/>
+  <link href="https://biblicallyfaithful.org/"/>
+  <updated>{{ collections.articles[0].date | dateToRfc3339 }}</updated>
+  <id>https://biblicallyfaithful.org/</id>
+  <author>
+    <name>Biblically Faithful</name>
+    <email>hello@biblicallyfaithful.org</email>
+  </author>
+  {%- for post in collections.articles | slice(0, 10) %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="https://biblicallyfaithful.org{{ post.url }}"/>
+    <id>https://biblicallyfaithful.org{{ post.url }}</id>
+    <updated>{{ post.date | dateToRfc3339 }}</updated>
+    <published>{{ post.date | dateToRfc3339 }}</published>
+    {% if post.data.synopsis %}
+    <summary>{{ post.data.synopsis }}</summary>
+    {% endif %}
+  </entry>
+  {%- endfor %}
+</feed>

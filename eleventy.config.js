@@ -1,7 +1,10 @@
+import rssPlugin from "@11ty/eleventy-plugin-rss";
+
 export default function(eleventyConfig) {
+  eleventyConfig.addPlugin(rssPlugin);
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("images");
-
+  
   // Date filter
   eleventyConfig.addFilter("postDate", (date) => {
     return new Date(date).toLocaleDateString("en-GB", {

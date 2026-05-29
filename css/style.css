@@ -567,3 +567,12 @@ footer {
   color: #c9a84c;
   background: rgba(201, 168, 76, 0.1);
 }
+
+/* ── RSS Icon ── */
+.nav-rss {
+  color: #f0e6d3;
+  display: flex;
+  align-items: center;
+}
+
+.nav-rss:hover { color: #c9a84c; }
