@@ -3,10 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Primary SEO -->
   <title>{{ title }} | Biblically Faithful</title>
+  <meta name="description" content="{{ synopsis if synopsis else 'Biblically Faithful — Honouring the Bible, Honouring God. Articles exploring Scripture with faithfulness and integrity.' }}">
+  <link rel="canonical" href="https://biblicallyfaithful.org{{ page.url }}">
+
+  <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+  <meta property="og:type" content="{{ 'article' if synopsis else 'website' }}">
+  <meta property="og:site_name" content="Biblically Faithful">
+  <meta property="og:title" content="{{ title }} | Biblically Faithful">
+  <meta property="og:description" content="{{ synopsis if synopsis else 'Honouring the Bible, Honouring God. Articles exploring Scripture with faithfulness and integrity.' }}">
+  <meta property="og:url" content="https://biblicallyfaithful.org{{ page.url }}">
+  <meta property="og:image" content="{{ 'https://biblicallyfaithful.org' + image if image else 'https://biblicallyfaithful.org/images/placeholder.svg' }}">
+
+  <!-- Twitter/X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title }} | Biblically Faithful">
+  <meta name="twitter:description" content="{{ synopsis if synopsis else 'Honouring the Bible, Honouring God. Articles exploring Scripture with faithfulness and integrity.' }}">
+  <meta name="twitter:image" content="{{ 'https://biblicallyfaithful.org' + image if image else 'https://biblicallyfaithful.org/images/placeholder.svg' }}">
+
+  <!-- Article specific -->
+  {% if date %}
+    <meta property="article:published_time" content="{{ date }}">
+  {% endif %}
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
