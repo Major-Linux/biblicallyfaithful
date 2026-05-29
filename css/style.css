@@ -147,19 +147,30 @@ hr {
   border-radius: 8px;
   padding: clamp(1rem, 3vw, 1.5rem);
   margin-bottom: 1.5rem;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+  position: relative;
 }
 
-.post-item:hover { border-color: var(--accent); }
+.post-item:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
 
-.post-item h2 { 
-  margin: 0 0 0.5rem; 
-  font-size: clamp(1.1rem, 2.5vw, 1.4rem); 
+.post-item h2 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
 }
 
 .post-item h2 a {
   color: var(--heading);
   text-decoration: none;
+}
+
+/* This stretches the link to cover the entire card */
+.post-item h2 a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
 }
 
 .post-item h2 a:hover { color: var(--accent); }
@@ -479,6 +490,25 @@ footer {
     grid-row: auto;
   }
 }
+
+
+.bento__cell--featured {
+  position: relative;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.bento__cell--featured:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.bento__featured-title a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+
 /* ── Category Pages ── */
 .category-header {
   margin-bottom: 2rem;
