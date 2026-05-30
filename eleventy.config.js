@@ -14,6 +14,16 @@ export default function(eleventyConfig) {
     });
   });
 
+
+// Reading time filter
+  eleventyConfig.addFilter("readingTime", (content) => {
+    const wordsPerMinute = 200;
+    const words = content.trim().split(/\s+/).length;
+    const minutes = Math.ceil(words / wordsPerMinute);
+    return `Read Time: ${minutes} min (est.)`;
+  });
+
+
   // Video card shortcode
   eleventyConfig.addShortcode("videocard", (id, title, summary, runtime, date) => {
     return `

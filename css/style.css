@@ -576,3 +576,21 @@ footer {
 }
 
 .nav-rss:hover { color: #c9a84c; }
+
+/* ── Article Meta ── */
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.meta-divider {
+  color: var(--text-muted);
+}
+
+.reading-time {
+  color: var(--text-muted);
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+}
