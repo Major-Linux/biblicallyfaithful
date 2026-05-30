@@ -24,6 +24,19 @@ export default function(eleventyConfig) {
   });
 
 
+// Previous article filter
+  eleventyConfig.addFilter("previousPost", (collection, currentPage) => {
+    const index = collection.findIndex(p => p.url === currentPage.url);
+    return index < collection.length - 1 ? collection[index + 1] : null;
+  });
+
+// Next article filter
+  eleventyConfig.addFilter("nextPost", (collection, currentPage) => {
+    const index = collection.findIndex(p => p.url === currentPage.url);
+    return index > 0 ? collection[index - 1] : null;
+  });
+
+
   // Video card shortcode
   eleventyConfig.addShortcode("videocard", (id, title, summary, runtime, date) => {
     return `
