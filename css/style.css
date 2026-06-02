@@ -672,5 +672,62 @@ footer {
   color: var(--callout-text);
 }
 
+/* ── Share Buttons ── */
+.share-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
 
+.share-buttons__label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+  margin-right: 0.25rem;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-family: 'Inter', sans-serif;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  color: #ffffff;
+}
+
+.share-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+  color: #ffffff;
+}
+
+.share-btn--twitter  { background: #000000; }
+.share-btn--facebook { background: #1877f2; }
+.share-btn--whatsapp { background: #25d366; }
+
+.share-btn--copy {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.share-btn--copy:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+/* ── Hide share buttons in print ── */
+@media print {
+  .share-buttons { display: none !important; }
+}
 
