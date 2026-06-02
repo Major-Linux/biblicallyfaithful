@@ -10,6 +10,8 @@
   --border:      #333355;
   --link:        #f0e6d3;
   --link-hover:  #c9a84c;
+  --callout-bg:   #2a2a4a;
+  --callout-text: #f0e6d3;
 }
 
 /* ── CSS Variables: Light Theme ── */
@@ -24,6 +26,8 @@
   --border:      #e0d8cc;
   --link:        #1a1a2e;
   --link-hover:  #c9a84c;
+  --callout-bg:   #f0ece4;
+  --callout-text: #1a1a2e;
 }
 
 /* ── Reset ── */
@@ -650,3 +654,23 @@ footer {
     text-align: left;
   }
 }
+
+
+/* ── Callout Block ── */
+.callout {
+  margin: 2rem 0;
+  padding: 1.25rem 1.5rem;
+  border-left: 5px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  background: var(--callout-bg);
+}
+
+.callout p {
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  line-height: 1.7;
+  margin: 0;
+  color: var(--callout-text);
+}
+
+
+

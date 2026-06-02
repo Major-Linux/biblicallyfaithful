@@ -1,0 +1,104 @@
+@media print {
+
+  /* ── Force light background and dark text ── */
+  * {
+    background: #ffffff !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* ── Hide screen-only elements ── */
+  nav,
+  footer,
+  #theme-toggle,
+  .post-nav,
+  .share-buttons,
+  .back-to-top,
+  .nav-dropdown,
+  .nav-rss,
+  .read-more,
+  .bento {
+    display: none !important;
+  }
+
+  /* ── Main content ── */
+  body {
+    font-family: Georgia, serif;
+    font-size: 12pt;
+    line-height: 1.6;
+  }
+
+  main {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ── Headings ── */
+  h1 {
+    font-size: 22pt;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-size: 16pt;
+    margin-top: 1.5rem;
+  }
+
+  h3 {
+    font-size: 13pt;
+  }
+
+  /* ── Show URLs next to links ── */
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #444444 !important;
+  }
+
+  /* ── But not for internal anchor links ── */
+  a[href^="#"]::after,
+  a[href^="javascript"]::after {
+    content: "";
+  }
+
+  /* ── Article header ── */
+  article header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1pt solid #cccccc;
+  }
+
+  .article-meta {
+    font-size: 10pt;
+    color: #444444 !important;
+  }
+
+  /* ── Avoid page breaks inside elements ── */
+  h1, h2, h3,
+  blockquote,
+  figure,
+  img {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* ── Keep headings with the content below them ── */
+  h1, h2, h3 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* ── Add site name at top of print ── */
+  main::before {
+    content: "biblicallyfaithful.org";
+    display: block;
+    font-size: 9pt;
+    color: #666666 !important;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1pt solid #cccccc;
+  }
+
+}

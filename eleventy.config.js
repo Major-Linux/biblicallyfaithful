@@ -24,6 +24,16 @@ export default function(eleventyConfig) {
   });
 
 
+// Callout block shortcode
+  eleventyConfig.addShortcode("callout", (text) => {
+    return `
+      <div class="callout">
+        <p>${text}</p>
+      </div>
+    `;
+  });
+
+
 // Previous article filter
   eleventyConfig.addFilter("previousPost", (collection, currentPage) => {
     const index = collection.findIndex(p => p.url === currentPage.url);
