@@ -731,3 +731,44 @@ footer {
   .share-buttons { display: none !important; }
 }
 
+/* ── Back to Top Button ── */
+#back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #1a1a2e;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease,
+              visibility 0.3s ease,
+              transform 0.3s ease,
+              background 0.2s ease;
+  z-index: 999;
+}
+
+#back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#back-to-top:hover {
+  background: var(--heading);
+  color: var(--accent);
+}
+
+/* ── Hide in print ── */
+@media print {
+  #back-to-top { display: none !important; }
+}
