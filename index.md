@@ -11,7 +11,11 @@ templateEngineOverride: njk,md
   <!-- Featured Article -->
   {% set featured = collections.articles[0] %}
   <div class="bento__cell bento__cell--featured">
-    <img src="{{ featured.data.image if featured.data.image else 'images/placeholder.svg' }}" alt="{{ featured.data.title }}" class="bento__image"/>
+    {% if featured.data.image %}
+      {% image featured.data.image | replace("/images/", ""), featured.data.title %}
+    {% else %}
+      <img src="/images/placeholder.svg" alt="{{ featured.data.title }}" class="bento__image"/>
+    {% endif %}
     <div class="bento__featured-content">
       <span class="bento__label">Latest Article</span>
       <h2 class="bento__featured-title">

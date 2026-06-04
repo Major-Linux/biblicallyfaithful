@@ -1,4 +1,5 @@
 import rssPlugin from "@11ty/eleventy-plugin-rss";
+import Image from "@11ty/eleventy-img";
 
 export default function(eleventyConfig) {
   eleventyConfig.addPlugin(rssPlugin);
@@ -33,6 +34,30 @@ export default function(eleventyConfig) {
     `;
   });
 
+
+// Responsive image shortcode
+  eleventyConfig.addShortcode("image", async (src, alt, sizes = "100vw") => {
+    const metadata = await Image(`./images/${src}`, {
+      widths: [400, 800, 1200],
+      formats: ["webp", "jpeg"],
+      outputDir: "./_site/images/",
+      urlPath: "/images/",
+      filenameFormat: (id, src, width, format) => {
+        const name = src.split("/").pop().split(".")[0];
+        return `${name}-${width}w.${format}`;
+      }
+    });
+
+    
+  const imageAttributes = {
+    alt,
+    sizes,
+    loading: "lazy",
+    decoding: "async"
+  };
+
+  return Image.generateHTML(metadata, imageAttributes);
+});
 
 // Previous article filter
   eleventyConfig.addFilter("previousPost", (collection, currentPage) => {

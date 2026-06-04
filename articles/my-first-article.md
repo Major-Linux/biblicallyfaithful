@@ -41,6 +41,8 @@ Why limit the scripture ALL scripture is inspired of God, to one copy and one au
 
 ## Who or what was inspired?
 
+{% image "sbc-church-1887.png", "Our old church" %}
+
 Take the epistle known as .1 Corinthians', a book of containing much detail, doctrine, quoting Old Testament scriptures and written by the hand of four different writers.  
 Inspired of God, Spoken by Paul, written, by Timothy, and copied by scribes to the churches.
    
