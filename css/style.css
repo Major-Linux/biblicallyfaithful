@@ -223,7 +223,18 @@ footer {
   border-top: 1px solid var(--border);
   font-size: clamp(0.8rem, 1.5vw, 0.9rem);
   color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
+
+footer a {
+  color: var(--text-muted);
+  text-decoration: underline;
+}
+
+footer a:hover { color: var(--accent); }
+
 
 /* ── Mobile: max 600px ── */
 @media (max-width: 600px) {
@@ -782,18 +793,107 @@ picture {
   display: block;
 }
 
-/*
-.content img,
-.content picture {
-  margin: 1.5rem auto;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-}
-*/
-
 .content img,
 .content picture {
   margin: 0;
   border-radius: 8px;
   border: 1px solid var(--border);
 }
+
+/* ── 404 Error Page ── */
+.error-page {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.error-page h1 {
+  font-size: clamp(4rem, 15vw, 8rem);
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.error-page__message {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  color: var(--heading);
+  margin-bottom: 0.5rem;
+}
+
+.error-page__links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+/* ── Cookie Notice ── */
+.cookie-notice {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  max-width: 320px;
+  background: var(--bg-nav);
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 998;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease,
+              visibility 0.4s ease,
+              transform 0.4s ease;
+}
+
+.cookie-notice.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.cookie-notice p {
+  font-size: 0.9rem;
+  color: #f0e6d3;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.cookie-notice a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.cookie-notice__btn {
+  align-self: flex-start;
+  background: var(--accent);
+  color: #1a1a2e;
+  border: none;
+  border-radius: 4px;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.cookie-notice__btn:hover { opacity: 0.85; }
+
+/* ── Hide in print ── */
+@media print {
+  .cookie-notice { display: none !important; }
+}
+
+/* ── Mobile: full width ── */
+@media (max-width: 400px) {
+  .cookie-notice {
+    left: 1rem;
+    right: 1rem;
+    max-width: 100%;
+  }
+}
+

@@ -74,8 +74,10 @@
   <main>
     {{ content | safe }}
   </main>
+
   <footer>
     <p>&copy; 2026 Biblically Faithful. All rights reserved.</p>
+    <p><a href="/privacy/">Privacy Notice</a></p>
   </footer>
   
 
@@ -123,27 +125,49 @@
       });
     });
 
-  // ── Back to Top ──
-document.addEventListener('DOMContentLoaded', () => {
-  const backToTop = document.getElementById('back-to-top');
+    // ── Back to Top ──
+    document.addEventListener('DOMContentLoaded', () => {
+      const backToTop = document.getElementById('back-to-top');
 
-  if (backToTop) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 400) {
-        backToTop.classList.add('is-visible');
-      } else {
-        backToTop.classList.remove('is-visible');
+      if (backToTop) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 400) {
+            backToTop.classList.add('is-visible');
+          } else {
+            backToTop.classList.remove('is-visible');
+          }
+        });
+
+        backToTop.addEventListener('click', () => {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
       }
     });
 
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+    // ── Cookie Notice ──
+    document.addEventListener('DOMContentLoaded', () => {
+      const cookieNotice = document.getElementById('cookie-notice');
+      const cookieAccept = document.getElementById('cookie-accept');
+
+      if (cookieNotice && cookieAccept) {
+        if (!localStorage.getItem('cookie_consent')) {
+          setTimeout(() => {
+            cookieNotice.classList.add('is-visible');
+          }, 1500);
+        }
+
+        cookieAccept.addEventListener('click', () => {
+          localStorage.setItem('cookie_consent', 'accepted');
+          cookieNotice.classList.remove('is-visible');
+          setTimeout(() => {
+            cookieNotice.style.display = 'none';
+          }, 400);
+        });
+      }
     });
-  }
-});
 
   </script>
 
@@ -152,6 +176,16 @@ document.addEventListener('DOMContentLoaded', () => {
       <polyline points="18 15 12 9 6 15"></polyline>
     </svg>
   </button>
+
+  <!-- Cookie Notification -->
+  <div id="cookie-notice" class="cookie-notice" role="alert" aria-live="polite">
+    <p>
+      This site uses cookies from YouTube video embeds.
+      <a href="/privacy/">Learn more</a>
+    </p>
+    <button id="cookie-accept" class="cookie-notice__btn">Got it</button>
+  </div>
+
 
 </body>
 </html>
