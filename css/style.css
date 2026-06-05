@@ -827,6 +827,17 @@ picture {
   margin-top: 2rem;
 }
 
+
+/* ── View Transitions ── */
+/*
+@view-transition {
+  navigation: auto;
+}
+
+*/
+
+
+
 /* ── Cookie Notice ── */
 .cookie-notice {
   position: fixed;
@@ -898,5 +909,29 @@ picture {
 }
 
 
+/* ── Article Categories ── */
+.article-categories {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
 
+.article-category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #1a1a2e;
+  background: var(--accent);
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
+.article-category:hover {
+  opacity: 0.85;
+  color: #1a1a2e;
+}
 

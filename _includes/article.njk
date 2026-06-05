@@ -63,6 +63,13 @@ layout: base.njk
       <span class="meta-divider">·</span>
       <span class="reading-time">{{ content | readingTime }}</span>
     </div>
+    <div class="article-categories">
+      {% for tag in tags %}
+        {% if tag != "articles" %}
+          <a href="/{{ tag }}/" class="article-category">{{ tag | title }}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
     {{ shareButtons() }}
   </header>
   <div class="content">

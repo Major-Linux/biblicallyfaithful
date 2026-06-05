@@ -4,7 +4,7 @@
   <!-- 1. Character encoding and viewport (always first) -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  {# <meta name="view-transition" content="same-origin" /> #}
+  <!-- <meta name="view-transition" content="same-origin" /> -->
 
   <!-- 2. Primary SEO -->
   <title>{{ title }} | Biblically Faithful</title>
@@ -47,9 +47,11 @@
       "description": "{{ synopsis }}",
       "image": "{{ 'https://biblicallyfaithful.org' + image if image else 'https://biblicallyfaithful.org/images/placeholder.svg' }}",
       "datePublished": "{{ date }}",
+      "keywords": "{{ tags | reject('equalto', 'articles') | join(', ') }}",
+      "articleSection": "{{ tags | reject('equalto', 'articles') | first | title }}",
       "author": {
         "@type": "Person",
-        "name": "Brian Dickson",
+        "name": "Brian",
         "url": "https://biblicallyfaithful.org/about/"
       },
       "publisher": {
@@ -85,8 +87,6 @@
   <!-- 10. Stylesheet -->
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/print.css" media="print" />
-
-  
 
 </head>
 <body>
@@ -125,7 +125,6 @@
     <p><a href="/privacy/">Privacy Notice</a></p>
   </footer>
   
-
   <script>
     // ── Theme Toggle ──
     const toggle = document.getElementById('theme-toggle');
@@ -213,8 +212,6 @@
         });
       }
     });
-
-
   </script>
 
   <button id="back-to-top" aria-label="Back to top" title="Back to top">
@@ -231,7 +228,6 @@
     </p>
     <button id="cookie-accept" class="cookie-notice__btn">Got it</button>
   </div>
-
 
 </body>
 </html>
