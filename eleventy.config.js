@@ -3,8 +3,7 @@ import Image from "@11ty/eleventy-img";
 
 export default function(eleventyConfig) {
   eleventyConfig.addPlugin(rssPlugin);
-  eleventyConfig.addPassthroughCopy("css");
-  eleventyConfig.addPassthroughCopy("images");
+  eleventyConfig.addPassthroughCopy("assets");
   
   // Date filter
   eleventyConfig.addFilter("postDate", (date) => {
@@ -37,11 +36,11 @@ export default function(eleventyConfig) {
 
 // Responsive image shortcode
   eleventyConfig.addShortcode("image", async (src, alt, sizes = "100vw") => {
-    const metadata = await Image(`./images/${src}`, {
+    const metadata = await Image(`./assets/images/${src}`, {
       widths: [400, 800, 1200],
       formats: ["webp", "jpeg"],
-      outputDir: "./_site/images/",
-      urlPath: "/images/",
+      outputDir: "./_site/assetsimages/",
+      urlPath: "/assets/images/",
       filenameFormat: (id, src, width, format) => {
         const name = src.split("/").pop().split(".")[0];
         return `${name}-${width}w.${format}`;

@@ -1,0 +1,356 @@
+/*==================================================
+  BUTTONS
+==================================================*/
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    padding: 0.75rem 1.25rem;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+
+    background: var(--color-surface);
+    color: var(--color-heading);
+
+    text-decoration: none;
+    font-weight: var(--weight-semibold);
+
+    transition:
+        background var(--transition),
+        border-color var(--transition),
+        transform var(--transition);
+}
+
+.button:hover {
+    border-color: var(--color-heading);
+    transform: translateY(-1px);
+}
+
+.button-primary {
+    background: var(--color-church);
+    color: white;
+    border-color: transparent;
+}
+
+.button-primary:hover {
+    background: var(--color-link-hover);
+    color: white;
+}
+
+/*==================================================
+  CARDS
+==================================================*/
+
+.card {
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+
+    padding: var(--space-4);
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        border-color var(--transition),
+        transform var(--transition);
+}
+
+.card:hover {
+    border-color: var(--color-heading);
+    transform: translateY(-2px);
+}
+
+/*==================================================
+  SECTION HEADERS
+==================================================*/
+
+.section-heading {
+    margin-bottom: var(--space-4);
+}
+
+.section-heading h2 {
+    margin-bottom: 0.5rem;
+}
+
+.section-heading p {
+    color: var(--color-text-muted);
+    margin-bottom: 0;
+}
+
+
+/*==================================================
+  FEATURE
+==================================================*/
+
+.feature {
+
+    max-width: 720px;
+
+}
+
+.feature__eyebrow {
+
+    margin-bottom: .75rem;
+
+    font-size: .8rem;
+
+    font-weight: var(--weight-semibold);
+
+    letter-spacing: .15em;
+
+    text-transform: uppercase;
+
+    color: var(--color-text-muted);
+
+}
+
+.feature__title {
+
+    margin-bottom: 1.25rem;
+
+}
+
+.feature__text {
+
+    max-width: 60ch;
+
+    color: var(--color-text);
+
+}
+
+.feature .button {
+
+    margin-top: var(--space-4);
+
+}
+
+
+/*==================================================
+  FEATURE SECTIONS
+==================================================*/
+
+.biblical-church-home {
+
+    background: var(--color-surface);
+
+    /* border: 1px solid var(--color-border); */
+
+    border-radius: var(--radius-lg);
+
+    padding: var(--space-6);
+
+}
+
+
+
+/*==================================================
+  CATEGORY CARDS
+==================================================*/
+
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    padding: var(--space-5);
+
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+}
+
+.category-card__icon {
+    width: 4rem;
+    height: 4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: var(--space-3);
+
+    font-size: 2.75rem;
+}
+
+.category-card h3 {
+    margin-bottom: var(--space-3);
+}
+
+.category-card p {
+    color: var(--color-text);
+    margin-bottom: var(--space-4);
+}
+
+.category-card .button {
+    margin-top: auto;
+}
+
+
+/* Biblical Church */
+
+.category-card--church {
+
+    background: var(--color-church-bg);
+    border-color: var(--color-church-border);
+
+}
+
+.category-card--church h3,
+.category-card--church .category-card__icon {
+
+    color: var(--color-church);
+
+}
+
+/* Bible */
+
+.category-card--bible {
+
+    background: var(--color-bible-bg);
+    border-color: var(--color-bible-border);
+
+}
+
+.category-card--bible h3,
+.category-card--bible .category-card__icon {
+
+    color: var(--color-bible);
+
+}
+
+/* Creation */
+
+.category-card--creation {
+
+    background: var(--color-creation-bg);
+    border-color: var(--color-creation-border);
+
+}
+
+.category-card--creation h3,
+.category-card--creation .category-card__icon {
+
+    color: var(--color-creation);
+
+}
+
+/* Redemption */
+
+.category-card--redemption {
+
+    background: var(--color-redemption-bg);
+    border-color: var(--color-redemption-border);
+
+}
+
+.category-card--redemption h3,
+.category-card--redemption .category-card__icon {
+
+    color: var(--color-redemption);
+
+}
+
+/* End Times */
+
+.category-card--endtimes {
+
+    background: var(--color-endtimes-bg);
+    border-color: var(--color-endtimes-border);
+
+}
+
+.category-card--endtimes h3,
+.category-card--endtimes .category-card__icon {
+
+    color: var(--color-endtimes);
+
+}
+
+
+.category-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/*==================================================
+  ARTICLE CARDS
+==================================================*/
+
+.article-card {
+    display: block;
+
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+
+    padding: var(--space-3);
+
+    text-decoration: none;
+    color: inherit;
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        border-color var(--transition),
+        transform var(--transition);
+}
+
+.article-card:hover {
+    border-color: var(--color-heading);
+    transform: translateY(-2px);
+}
+
+.article-card__category {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+}
+
+.article-card__title {
+    margin-top: var(--space-1);
+    margin-bottom: 0;
+}
+
+
+/*==================================================
+  ICON BOXES
+==================================================*/
+
+.icon-box {
+
+    width: 3rem;
+    height: 3rem;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: var(--radius);
+
+    background: var(--color-surface-alt);
+
+    font-size: 1.4rem;
+
+}
+
+.icon-box img {
+
+    width: 1.75rem;
+    height: 1.75rem;
+
+}
+
+
+

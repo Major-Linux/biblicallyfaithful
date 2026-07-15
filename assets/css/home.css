@@ -1,0 +1,216 @@
+/*==================================================
+  HERO
+==================================================*/
+
+.hero {
+    /* display: flex;
+    align-items: center; */
+
+    min-height: 30vh;
+
+    /* padding-block:
+        clamp(3rem, 6vw, 6rem); */
+
+    /* background: var(--color-surface-alt); */
+
+    /* border-bottom:
+        1px solid var(--color-border); */
+}
+
+.hero__content {
+    max-width: 50rem;
+}
+
+.hero__title {
+    margin-bottom: var(--space-2);
+}
+
+.hero__summary {
+    font-size: var(--text-lg);
+
+    color: var(--color-text-muted);
+
+    max-width: 42rem;
+}
+
+/*==================================================
+  FEATURED BIBLICAL CHURCH
+==================================================*/
+
+.featured-church {
+    padding-block: var(--space-6);
+}
+
+.featured-church__card {
+    display: grid;
+
+    gap: var(--space-4);
+
+    grid-template-columns:
+        minmax(0, 2fr) minmax(280px, 1fr);
+}
+
+/*==================================================
+  FEATURED SCRIPTURE
+==================================================*/
+
+.featured-scripture {
+    padding-block: var(--space-5);
+}
+
+.featured-scripture__card {
+    display: grid;
+
+    gap: var(--space-4);
+
+    grid-template-columns:
+        1fr 2fr;
+}
+
+/*==================================================
+  INTRO ROW
+==================================================*/
+
+.intro-grid {
+    display: grid;
+
+    gap: var(--space-4);
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(320px, 1fr));
+}
+
+/*==================================================
+  CATEGORIES
+==================================================*/
+
+.category-grid {
+    display: grid;
+
+    gap: var(--space-4);
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/*==================================================
+  RECENT ARTICLES
+==================================================*/
+
+.article-grid {
+    display: grid;
+
+    gap: var(--space-4);
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+}
+
+
+/*==================================================
+  BIBLICAL CHURCH FEATURE
+==================================================*/
+
+.biblical-church-grid {
+
+    display: grid;
+
+    grid-template-columns: 35% 65%;
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--radius);
+    
+
+
+    overflow: hidden;
+
+}
+
+
+.biblical-church-panel {
+
+    background: var(--color-church-bg);
+
+    min-height: 100%;
+
+    display: flex;
+    align-items: flex-start;
+
+    padding: var(--space-6);
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+
+.biblical-church-panel h2 {
+
+    margin: 0;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    text-transform: uppercase;
+
+}
+
+.biblical-church-panel__image {
+
+    width: 10rem;
+
+    margin-bottom: var(--space-4);
+
+}
+
+
+.biblical-church-content {
+
+    display: grid;
+
+    grid-template-rows: 1fr 1fr;
+
+}
+
+
+.church-feature {
+
+    padding: var(--space-5);
+
+}
+
+
+.church-feature+.church-feature {
+
+    border-top: 1px solid var(--color-border);
+
+}
+
+
+.church-feature h3 {
+
+    margin-bottom: var(--space-2);
+
+}
+
+
+.church-feature p {
+
+    max-width: 60ch;
+
+}
+
+.feature-row {
+
+    display: flex;
+
+    gap: var(--space-4);
+
+    align-items: flex-start;
+
+}
+

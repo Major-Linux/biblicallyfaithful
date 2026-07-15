@@ -1,0 +1,91 @@
+/* 
+- body 
+- links 
+- headings 
+- images 
+- default element styles 
+*/
+
+/*==================================================
+  RESET
+==================================================*/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}
+
+/*==================================================
+  TYPOGRAPHY
+==================================================*/
+
+body {
+
+    margin: 0;
+
+    font-family: var(--font-body);
+
+    font-size: var(--text-base);
+
+    line-height: 1.7;
+
+    background: var(--color-bg);
+
+    color: var(--color-text);
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: var(--weight-semibold);
+    line-height: var(--leading-heading);
+
+    color: var(--color-heading);
+
+    margin-top: 0;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, var(--text-hero));
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, var(--text-h1));
+}
+
+h3 {
+    font-size: var(--text-h2); }
+
+p,
+ul,
+ol,
+blockquote {
+    margin-top: 0;
+    margin-bottom: var(--paragraph-spacing);   
+}
+
+a {
+    color: var(--color-link);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+
+    transition: color var(--transition);
+}
+
+a:hover {
+    color: var(--color-link-hover); }
+

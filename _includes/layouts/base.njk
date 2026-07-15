@@ -20,13 +20,13 @@
   <meta property="og:title" content="{{ title }} | Biblically Faithful">
   <meta property="og:description" content="{{ synopsis if synopsis else 'Honouring the Bible, Honouring God. Articles exploring Scripture with faithfulness and integrity.' }}">
   <meta property="og:url" content="https://biblicallyfaithful.org{{ page.url }}">
-  <meta property="og:image" content="{{ 'https://biblicallyfaithful.org' + image if image else 'https://biblicallyfaithful.org/images/placeholder.svg' }}">
+  <meta property="og:image" content="{{ 'https://biblicallyfaithful.org' + image if image else 'https://biblicallyfaithful.org/assets/images/placeholder.svg' }}">
 
   <!-- 5. Twitter/X Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ title }} | Biblically Faithful">
   <meta name="twitter:description" content="{{ synopsis if synopsis else 'Honouring the Bible, Honouring God. Articles exploring Scripture with faithfulness and integrity.' }}">
-  <meta name="twitter:image" content="{{ 'https://biblicallyfaithful.org' + image if image else 'https://biblicallyfaithful.org/images/placeholder.svg' }}">
+  <meta name="twitter:image" content="{{ 'https://biblicallyfaithful.org' + image if image else 'https://biblicallyfaithful.org/assets/images/placeholder.svg' }}">
 
   <!-- 6. Article specific -->
   {% if date %}
@@ -45,7 +45,7 @@
       "@type": "BlogPosting",
       "headline": "{{ title }}",
       "description": "{{ synopsis }}",
-      "image": "{{ 'https://biblicallyfaithful.org' + image if image else 'https://biblicallyfaithful.org/images/placeholder.svg' }}",
+      "image": "{{ 'https://biblicallyfaithful.org' + image if image else 'https://biblicallyfaithful.org/assets/images/placeholder.svg' }}",
       "datePublished": "{{ date }}",
       "keywords": "{{ tags | reject('equalto', 'articles') | join(', ') }}",
       "articleSection": "{{ tags | reject('equalto', 'articles') | first | title }}",
@@ -82,47 +82,60 @@
   <!-- 9. Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">  -->
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- 10. Stylesheet -->
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/print.css" media="print" />
+  <!-- <link rel="stylesheet" href="/css/style.css" /> -->
+
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/home.css">
+
+  <link rel="stylesheet" href="/assets/css/print.css" media="print" />
 
 </head>
 <body>
-  <nav>
-    <div class="nav-left">
-      <a href="/" class="site-title">Biblically Faithful</a>
+
+  <header class="site-header">
+
+    <div class="container site-header__inner">
+
+      <a class="site-branding" href="/">
+        <h1 class="site-branding__title">
+          Biblically Faithful
+        </h1>        
+      </a>
+
+      <nav class="site-nav">
+        <a href="/">Home</a>
+        <a href="/biblical-church/">Biblical Church</a>
+        <a href="/bible/">The Bible</a>
+        <a href="/creation/">Creation</a>
+        <a href="/redemption/">Redemption</a>
+        <a href="/end-times/">End Times</a>    
+        <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>      
+      </nav>
+
     </div>
-    <div class="nav-right">
-      <a href="/">Home</a>
-      <a href="/about/">About</a>
-      <a href="/articles/">Articles</a>
-        <a href="/feed.xml" class="nav-rss" aria-label="RSS Feed" title="Subscribe via RSS">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19.01 7.38 20 6.18 20C4.98 20 4 19.01 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z"/>
-          </svg>
-        </a>
-      <div class="nav-dropdown">
-        <button class="nav-dropdown__trigger">Categories ▾</button>
-        <div class="nav-dropdown__menu">
-          <a href="/bible/">Bible</a>
-          <a href="/church/">Church</a>
-          <a href="/creation/">Creation</a>
-          <a href="/end-times/">End Times</a>
-          <a href="/redemption/">Redemption</a>
-        </div>
-      </div>
-      <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
-    </div>
-  </nav>
-  <main>
-    {{ content | safe }}
+
+  </header>
+
+  <main class="site-main">
+      {{ content | safe }}
   </main>
 
-  <footer>
-    <p>&copy; 2026 Biblically Faithful. All rights reserved.</p>
-    <p><a href="/privacy/">Privacy Notice</a></p>
+  <footer class="site-footer">
+
+    <div class="container site-footer__inner">
+      <p>&copy; 2026 Biblically Faithful</p>
+    </div>
+    
   </footer>
   
   <script>
