@@ -2,7 +2,6 @@
 layout: layouts/base.njk
 title: About
 ---
-
 # About Biblically Faithful
 
 _**In Progress**: This page is till being put together, but it is deemed helpful to have a basic draft here to serve as an outline._

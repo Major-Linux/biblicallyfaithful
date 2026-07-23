@@ -102,143 +102,163 @@
 </head>
 <body>
 
-  <header class="site-header">
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-branding" href="/">
+      <h1 class="site-branding__title">
+        Biblically Faithful
+      </h1>        
+    </a>
 
-    <div class="container site-header__inner">
+    <nav class="site-nav-desktop">
+      <a href="/">Home</a>
+      <a href="/biblical-church/">Biblical Church</a>
+      <a href="/bible/">The Bible</a>
+      <a href="/creation/">Creation</a>
+      <a href="/redemption/">Redemption</a>
+      <a href="/end-times/">End Times</a>
+    </nav>
 
-      <a class="site-branding" href="/">
-        <h1 class="site-branding__title">
-          Biblically Faithful
-        </h1>        
-      </a>
+    <div class="site-header__controls">
+      <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button id="mobile-nav-toggle" class="mobile-nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="mobile-nav-toggle__bar"></span>
+        <span class="mobile-nav-toggle__bar"></span>
+        <span class="mobile-nav-toggle__bar"></span>
+      </button>
+    </div>
+  </div>
 
-      <nav class="site-nav">
-        <a href="/">Home</a>
-        <a href="/biblical-church/">Biblical Church</a>
-        <a href="/bible/">The Bible</a>
-        <a href="/creation/">Creation</a>
-        <a href="/redemption/">Redemption</a>
-        <a href="/end-times/">End Times</a>    
-        <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>      
-      </nav>
+  <nav id="mobile-nav-panel" class="mobile-nav-panel">
+    <a href="/">Home</a>
+    <a href="/biblical-church/">Biblical Church</a>
+    <a href="/bible/">The Bible</a>
+    <a href="/creation/">Creation</a>
+    <a href="/redemption/">Redemption</a>
+    <a href="/end-times/">End Times</a>
+  </nav>
+</header>
 
+
+
+<main class="site-main">
+    {{ content | safe }}
+</main>
+
+
+
+<footer class="site-footer">
+  <div class="container">
+
+    <div class="site-footer__nav">
+      <a href="/">Home</a>
+      <a href="/biblical-church/">Biblical Church</a>
+      <a href="/bible/">The Bible</a>
+      <a href="/creation/">Creation</a>
+      <a href="/redemption/">Redemption</a>
+      <a href="/end-times/">End Times</a>
+      <a href="/about/">About</a>
     </div>
 
-  </header>
-
-  <main class="site-main">
-      {{ content | safe }}
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-
-      <div class="site-footer__nav">
-        <a href="/">Home</a>
-        <a href="/biblical-church/">Biblical Church</a>
-        <a href="/bible/">The Bible</a>
-        <a href="/creation/">Creation</a>
-        <a href="/redemption/">Redemption</a>
-        <a href="/end-times/">End Times</a>
-        <a href="/about/">About</a>
-      </div>
-
-      <div class="container site-footer__inner">
-        <p>&copy; 2026 Biblically Faithful</p>
-      </div>
-
+    <div class="container site-footer__inner">
+      <p>&copy; 2026 Biblically Faithful</p>
     </div>
-    
-  </footer>
+
+  </div>
   
-  <script>
-    // ── Theme Toggle ──
-    const toggle = document.getElementById('theme-toggle');
-    const root = document.documentElement;
+</footer>
 
-    const saved = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const isDark = saved ? saved === 'dark' : prefersDark;
+<script>
+  // ── Theme Toggle ──
+  const toggle = document.getElementById('theme-toggle');
+  const root = document.documentElement;
 
-    root.setAttribute('data-theme', isDark ? 'dark' : 'light');
-    toggle.textContent = isDark ? '☀️' : '🌙';
+  const saved = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const isDark = saved ? saved === 'dark' : prefersDark;
 
-    toggle.addEventListener('click', () => {
-      const current = root.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      toggle.textContent = next === 'dark' ? '☀️' : '🌙';
-    });
+  root.setAttribute('data-theme', isDark ? 'dark' : 'light');
+  toggle.textContent = isDark ? '☀️' : '🌙';
 
-    // ── Categories Dropdown ──
-    const trigger = document.querySelector('.nav-dropdown__trigger');
-    const menu = document.querySelector('.nav-dropdown__menu');
+  toggle.addEventListener('click', () => {
+    const current = root.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    toggle.textContent = next === 'dark' ? '☀️' : '🌙';
+  });
 
-    trigger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      menu.classList.toggle('is-open');
-      trigger.textContent = menu.classList.contains('is-open') ? 'Categories ▴' : 'Categories ▾';
-    });
 
-    // Close dropdown when clicking anywhere else on the page
-    document.addEventListener('click', () => {
-      menu.classList.remove('is-open');
-      trigger.textContent = 'Categories ▾';
-    });
+  // ── Back to Top ──
+  document.addEventListener('DOMContentLoaded', () => {
+    const backToTop = document.getElementById('back-to-top');
 
-    // Close dropdown when a menu link is clicked
-    menu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.remove('is-open');
-        trigger.textContent = 'Categories ▾';
-      });
-    });
-
-    // ── Back to Top ──
-    document.addEventListener('DOMContentLoaded', () => {
-      const backToTop = document.getElementById('back-to-top');
-
-      if (backToTop) {
-        window.addEventListener('scroll', () => {
-          if (window.scrollY > 400) {
-            backToTop.classList.add('is-visible');
-          } else {
-            backToTop.classList.remove('is-visible');
-          }
-        });
-
-        backToTop.addEventListener('click', () => {
-          window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-          });
-        });
-      }
-    });
-
-    // ── Cookie Notice ──
-    document.addEventListener('DOMContentLoaded', () => {
-      const cookieNotice = document.getElementById('cookie-notice');
-      const cookieAccept = document.getElementById('cookie-accept');
-
-      if (cookieNotice && cookieAccept) {
-        if (!localStorage.getItem('cookie_consent')) {
-          setTimeout(() => {
-            cookieNotice.classList.add('is-visible');
-          }, 1500);
+    if (backToTop) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          backToTop.classList.add('is-visible');
+        } else {
+          backToTop.classList.remove('is-visible');
         }
+      });
 
-        cookieAccept.addEventListener('click', () => {
-          localStorage.setItem('cookie_consent', 'accepted');
-          cookieNotice.classList.remove('is-visible');
-          setTimeout(() => {
-            cookieNotice.style.display = 'none';
-          }, 400);
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
         });
+      });
+    }
+  });
+
+  // ── Cookie Notice ──
+  document.addEventListener('DOMContentLoaded', () => {
+    const cookieNotice = document.getElementById('cookie-notice');
+    const cookieAccept = document.getElementById('cookie-accept');
+
+    if (cookieNotice && cookieAccept) {
+      if (!localStorage.getItem('cookie_consent')) {
+        setTimeout(() => {
+          cookieNotice.classList.add('is-visible');
+        }, 1500);
       }
-    });
-  </script>
+
+      cookieAccept.addEventListener('click', () => {
+        localStorage.setItem('cookie_consent', 'accepted');
+        cookieNotice.classList.remove('is-visible');
+        setTimeout(() => {
+          cookieNotice.style.display = 'none';
+        }, 400);
+      });
+    }
+  });
+
+  // ── Mobile Nav Toggle ──
+  document.addEventListener('DOMContentLoaded', () => {
+    const navToggle = document.getElementById('mobile-nav-toggle');
+    const navPanel = document.getElementById('mobile-nav-panel');
+
+    if (navToggle && navPanel) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navPanel.classList.toggle('is-open');
+        navToggle.classList.toggle('is-active', isOpen);
+        navToggle.setAttribute('aria-expanded', isOpen);
+      });
+
+      // Close menu when a link is clicked
+      navPanel.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navPanel.classList.remove('is-open');
+          navToggle.classList.remove('is-active');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  });
+
+
+
+</script>
 
   <button id="back-to-top" aria-label="Back to top" title="Back to top">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">

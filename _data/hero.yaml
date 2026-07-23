@@ -1,9 +1,10 @@
 # _data/hero.yaml
+eyebrow: Honouring the Bible • Honouring God
 title: Biblically Faithful
-
 summary: >
   Encouraging Christians to believe, live and gather
   according to the teaching of Scripture.
-
 ctaText: What is a Biblical Church?
-ctaUrl: /what-is-a-biblical-church/
+ctaUrl: /biblical-church/
+image: /assets/images/placeholder.svg
+imageAlt: A peaceful mountain landscape at sunrise

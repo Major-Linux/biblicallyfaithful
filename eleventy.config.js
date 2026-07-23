@@ -1,7 +1,10 @@
+import * as yaml from "js-yaml"; 
 import rssPlugin from "@11ty/eleventy-plugin-rss";
 import Image from "@11ty/eleventy-img";
 
 export default function(eleventyConfig) {
+  // Add YAML parsing extension for the _data directory
+  eleventyConfig.addDataExtension("yaml, yml", (contents) => yaml.load(contents));
   eleventyConfig.addPlugin(rssPlugin);
   eleventyConfig.addPassthroughCopy("assets");
   
@@ -39,7 +42,7 @@ export default function(eleventyConfig) {
     const metadata = await Image(`./assets/images/${src}`, {
       widths: [400, 800, 1200],
       formats: ["webp", "jpeg"],
-      outputDir: "./_site/assetsimages/",
+      outputDir: "./_site/assets/images/",
       urlPath: "/assets/images/",
       filenameFormat: (id, src, width, format) => {
         const name = src.split("/").pop().split(".")[0];
@@ -119,7 +122,8 @@ export default function(eleventyConfig) {
     dir: {
       input: ".",
       output: "_site",
-      includes: "_includes"
+      includes: "_includes",
+      data: "_data",
     }
   };
 };

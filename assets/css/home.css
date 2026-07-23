@@ -1,24 +1,66 @@
 /*==================================================
   HERO
 ==================================================*/
-
 .hero {
-    /* display: flex;
-    align-items: center; */
+    background: var(--color-surface-alt);
+    border-bottom: 1px solid var(--color-border);
+    padding-block: clamp(2rem, 5vw, 4rem);
+}
 
-    min-height: 30vh;
-
-    /* padding-block:
-        clamp(3rem, 6vw, 6rem); */
-
-    /* background: var(--color-surface-alt); */
-
-    /* border-bottom:
-        1px solid var(--color-border); */
+.hero__inner {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: center;
+    gap: var(--space-5);
 }
 
 .hero__content {
-    max-width: 50rem;
+    max-width: 34rem;
+}
+
+.hero__eyebrow {
+    font-size: var(--text-sm);
+    color: var(--color-accent);
+    font-weight: var(--weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-2);
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 5vw, var(--text-hero));
+    color: var(--color-heading);
+    line-height: var(--leading-tight);
+    margin-bottom: var(--space-3);
+}
+
+.hero__summary {
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    max-width: 42rem;
+    margin-bottom: var(--space-4);
+}
+
+.hero__media {
+    width: 100%;
+}
+
+.hero__image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    display: block;
+}
+
+/* ── Mobile: stack image below text ── */
+@media (max-width: 760px) {
+    .hero__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .hero__media {
+        order: -1;
+    }
 }
 
 .hero__title {

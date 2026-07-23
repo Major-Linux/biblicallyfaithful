@@ -1,26 +1,16 @@
 <section class="hero">
-  <div class="container">
-
+  <div class="container hero__inner">
     <div class="hero__content">
-
-      <p class="hero__eyebrow">
-        Honouring the Bible • Honouring God
-      </p>
-
-      <h1>
-        Biblically Faithful
-      </h1>
-
-      <p class="hero__summary">
-        Encouraging Christians to believe, live and gather
-        according to the teaching of Scripture.
-      </p>
-
-      <a href="#" class="btn btn-primary">
-        What is a Biblical Church?
+      <p class="hero__eyebrow">{{ hero.eyebrow }}</p>
+      <h1>{{ hero.title }}</h1>
+      <p class="hero__summary">{{ hero.summary }}</p>
+      <a href="{{ hero.ctaUrl }}" class="btn btn-primary">
+        {{ hero.ctaText }} →
       </a>
-
     </div>
 
+    <div class="hero__media">
+      <img src="{{ hero.image }}" alt="{{ hero.imageAlt }}" class="hero__image">
+    </div>
   </div>
 </section>

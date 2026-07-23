@@ -13,8 +13,8 @@
   --color-text-muted: #666666;
   --color-heading: #233127;
 
-  --color-link: #3f5e46;
-  --color-link-hover: #2f4936;
+  --color-link: #2d67b3;
+  --color-link-hover: #1c395b;
 
   /* --color-border: #dde2e6; */
   /* --color-border: #d8dde5; */
@@ -51,6 +51,11 @@
   --color-endtimes: #6f4ab4;
   --color-endtimes-bg: #faf8ff;
   --color-endtimes-border: #e2d8f6;
+
+  /* Colour Accents */ 
+  --color-accent: #2d67b3;
+  --color-accent-contrast: #f7fbff;
+
 
   /* Fonts */
 
@@ -132,7 +137,10 @@
 
   --color-border: #4a4844;
 
-  
+  /* Colour Accents */
+  --color-accent: #f2c45b;
+  --color-accent-contrast: #1d1d1b;
+
 /*==================================================
     CATEGORY COLOURS
   ==================================================*/
