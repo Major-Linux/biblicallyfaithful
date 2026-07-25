@@ -1,16 +1,14 @@
-<section class="hero">
-  <div class="container hero__inner">
-    <div class="hero__content">
-      <p class="hero__eyebrow">{{ hero.eyebrow }}</p>
-      <h1>{{ hero.title }}</h1>
-      <p class="hero__summary">{{ hero.summary }}</p>
-      <a href="{{ hero.ctaUrl }}" class="btn btn-primary">
-        {{ hero.ctaText }} →
-      </a>
-    </div>
-
-    <div class="hero__media">
-      <img src="{{ hero.image }}" alt="{{ hero.imageAlt }}" class="hero__image">
+<section class="hero section">
+  <div class="container">
+    <div class="hero__inner panel" style="background-image: url('{{ hero.image }}');">
+      <div class="hero__content">
+        <p class="hero__eyebrow">{{ hero.eyebrow }}</p>
+        <h1>{{ hero.title }}</h1>
+        <p class="hero__summary">{{ hero.summary }}</p>
+        <a href="{{ hero.ctaUrl }}" class="button button-accent">
+          {{ hero.ctaText }} →
+        </a>
+      </div>
     </div>
   </div>
 </section>

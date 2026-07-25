@@ -40,6 +40,16 @@
     color: white;
 }
 
+.button-accent {
+    background: var(--color-accent);
+    color: var(--color-accent-contrast);
+    border-color: transparent;
+}
+
+.button-accent:hover {
+    background: var(--color-link-hover);
+    color: var(--color-accent-contrast); }
+
 /*==================================================
   CARDS
 ==================================================*/
@@ -300,7 +310,8 @@
     padding: var(--space-3);
 
     text-decoration: none;
-    color: inherit;
+    color: in
+    it;
 
     box-shadow: var(--shadow-sm);
 

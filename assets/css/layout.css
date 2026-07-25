@@ -28,6 +28,17 @@
     padding-block: var(--space-7);
 }
 
+
+/*==================================================
+  PANEL (bordered/rounded card framing)
+==================================================*/
+.panel {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+
 /*==================================================
   STACK
 ==================================================*/
