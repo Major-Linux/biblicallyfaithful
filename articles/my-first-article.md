@@ -10,7 +10,7 @@ tags:
 
 ## Introduction
 
-This is my first article on Biblically Faithful. More meaningful content will follow as the site develops.
+This is my first article on Biblically Faithful. [More meaningful](/about.md) content will follow as the site develops.
 
 {% callout "The word of God is living and active, sharper than any two-edged sword — Hebrews 4:12" %}
 

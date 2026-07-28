@@ -93,17 +93,78 @@
   FEATURED SCRIPTURE
 ==================================================*/
 
-.featured-scripture {
-    padding-block: var(--space-5);
-}
+/*==================================================
+  FEATURED SCRIPTURE
+==================================================*/
 
 .featured-scripture__card {
     display: grid;
+    grid-template-columns: 1fr 2fr;
+}
 
-    gap: var(--space-4);
+/* .featured-scripture__reference {
+    background: var(--color-bible-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-6);
+} */
 
-    grid-template-columns:
-        1fr 2fr;
+
+.featured-scripture__reference {
+    position: relative;
+    background-color: var(--color-bible-bg);
+    background-image: url('/assets/images/illustrations/bible-illustration-500x269.png');
+    background-size: 70% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 48px;
+}
+
+
+.featured-scripture__reference h2 {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    color: var(--color-bible);
+    margin: 0;
+}
+
+.featured-scripture__content {
+    /* display: flex;
+    align-items: center; */
+    /* font-weight: var(--weight-bold); */
+    padding: var(--space-6);
+}
+
+.featured-scripture__content blockquote {
+    font-size: var(--text-lg);
+    line-height: var(--leading-body);
+    color: var(--color-text);
+    margin: 0;
+    font-style: italic;
+}
+
+.featured-scripture__content cite {
+    display: block;
+    margin-top: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    font-style: normal; 
+    font-weight: var(--weight-bold);        
+}
+
+
+/* ── Mobile: stack reference above quote ── */
+@media (max-width: 760px) {
+    .featured-scripture__card {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-scripture__reference,
+    .featured-scripture__content {
+        padding: clamp(1rem, 4vw, var(--space-6));
+    }
 }
 
 /*==================================================

@@ -88,7 +88,12 @@ a {
 
 @media (hover: hover) {
     a:hover {
-        color: var(--color-link-hover);
         text-decoration: underline;
     }
+}
+
+/* ── Opt out: buttons and whole-card links shouldn't underline ── */
+.button:hover,
+.category-card:hover {
+    text-decoration: none; 
 }

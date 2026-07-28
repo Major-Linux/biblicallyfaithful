@@ -6,49 +6,127 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-
     padding: 0.75rem 1.25rem;
-
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
-
     background: var(--color-surface);
     color: var(--color-heading);
-
     text-decoration: none;
     font-weight: var(--weight-semibold);
-
     transition:
         background var(--transition),
         border-color var(--transition),
+        color var(--transition),
         transform var(--transition);
 }
 
 .button:hover {
-    border-color: var(--color-heading);
     transform: translateY(-1px);
 }
 
-.button-primary {
-    background: var(--color-church);
-    color: white;
-    border-color: transparent;
-}
-
-.button-primary:hover {
-    background: var(--color-link-hover);
-    color: white;
-}
-
-.button-accent {
-    background: var(--color-accent);
+/* ── Structural variants ── */
+.button-filled {
     color: var(--color-accent-contrast);
     border-color: transparent;
 }
 
-.button-accent:hover {
-    background: var(--color-link-hover);
-    color: var(--color-accent-contrast); }
+.button-filled:hover {
+    filter: brightness(0.9);
+    color: var(--color-accent-contrast);
+    border-color: transparent;
+}
+
+.button-outline {
+    background: transparent;
+}
+
+/* ── Category colours: filled ── */
+.button-bible.button-filled {
+    background: var(--color-bible);
+}
+
+.button-church.button-filled {
+    background: var(--color-church);
+}
+
+.button-creation.button-filled {
+    background: var(--color-creation);
+}
+
+.button-redemption.button-filled {
+    background: var(--color-redemption);
+}
+
+.button-endtimes.button-filled {
+    background: var(--color-endtimes);
+}
+
+.button-accent.button-filled {
+    background: var(--color-accent);
+}
+
+/* ── Category colours: outline ── */
+.button-bible.button-outline {
+    color: var(--color-bible);
+    border-color: var(--color-bible);
+}
+
+.button-church.button-outline {
+    color: var(--color-church);
+    border-color: var(--color-church);
+}
+
+.button-creation.button-outline {
+    color: var(--color-creation);
+    border-color: var(--color-creation);
+}
+
+.button-redemption.button-outline {
+    color: var(--color-redemption);
+    border-color: var(--color-redemption);
+}
+
+.button-endtimes.button-outline {
+    color: var(--color-endtimes);
+    border-color: var(--color-endtimes);
+}
+
+.button-accent.button-outline {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+/* ── Outline hover: fill in with category colour, text flips to contrast colour ── */
+@media (hover: hover) {
+    .button-outline:hover {
+        color: var(--color-accent-contrast);
+    }
+
+    .button-bible.button-outline:hover {
+        background: var(--color-bible);
+    }
+
+    .button-church.button-outline:hover {
+        background: var(--color-church);
+    }
+
+    .button-creation.button-outline:hover {
+        background: var(--color-creation);
+    }
+
+    .button-redemption.button-outline:hover {
+        background: var(--color-redemption);
+    }
+
+    .button-endtimes.button-outline:hover {
+        background: var(--color-endtimes);
+    }
+
+    .button-accent.button-outline:hover {
+        background: var(--color-accent);
+    }
+}
+
 
 /*==================================================
   CARDS
@@ -73,6 +151,10 @@
     border-color: var(--color-heading);
     transform: translateY(-2px);
 }
+
+
+
+
 
 /*==================================================
   SECTION HEADERS
@@ -287,7 +369,10 @@
 .category-card:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
+    text-decoration: none;
 }
+
+
 
 /*==================================================
   ARTICLE CARDS
