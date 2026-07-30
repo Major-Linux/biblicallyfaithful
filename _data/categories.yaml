@@ -1,24 +1,15 @@
 - title: Biblical Church
   slug: biblical-church
-  icon: church
   colour: church
-
 - title: The Bible
   slug: bible
-  icon: bible
   colour: bible
-
 - title: Creation
   slug: creation
-  icon: creation
   colour: creation
-
 - title: Redemption
   slug: redemption
-  icon: redemption
   colour: redemption
-
 - title: End Times
   slug: end-times
-  icon: end-times
-  colour: end-times
+  colour: endtimes

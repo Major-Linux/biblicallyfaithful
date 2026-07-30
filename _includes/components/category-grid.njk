@@ -1,45 +1,21 @@
 <section class="category-grid section">
     <div class="container">
-        <div class="section-heading">
+        {# <div class="section-heading">
             <h2>Explore Topics</h2>
             <p>Browse studies by biblical theme.</p>
-        </div>
+        </div> #}
         <div class="category-grid__cards">
-            <a class="category-card category-card--church" href="/biblical-church/">
-                <div class="category-card__icon">👥</div>
-                <h3>Biblical Church</h3>
-                <span class="button">
-                    Explore →
-                </span>
-            </a>
-            <a class="category-card category-card--bible" href="/bible/">
-                <div class="category-card__icon">📖</div>
-                <h3>The Bible</h3>
-                <span class="button">
-                    Explore →
-                </span>
-            </a>
-            <a class="category-card category-card--creation" href="/creation/">
-                <div class="category-card__icon">🌿</div>
-                <h3>Creation</h3>
-                <span class="button">
-                    Explore →
-                </span>
-            </a>
-            <a class="category-card category-card--redemption" href="/redemption/">
-                <div class="category-card__icon">✝</div>
-                <h3>Redemption</h3>
-                <span class="button">
-                    Explore →
-                </span>
-            </a>
-            <a class="category-card category-card--endtimes" href="/end-times/">
-                <div class="category-card__icon">⏳</div>
-                <h3>End Times</h3>
-                <span class="button">
-                    Explore →
-                </span>
-            </a>
+            {% for category in categories %}
+                <a class="category-card category-card--{{ category.colour }}" href="/{{ category.slug }}/">
+                    <div class="category-card__icon">
+                        <img src="/assets/images/icons/category-{{ category.slug }}.png" alt="">
+                    </div>
+                    <h3>{{ category.title }}</h3>
+                    <span class="button button-filled button-{{ category.colour }}">
+                        Explore →
+                    </span>
+                </a>
+            {% endfor %}
         </div>
     </div>
 </section>
