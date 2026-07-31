@@ -109,7 +109,7 @@ export default function(eleventyConfig) {
   });
 
   // Category collections
-  const categories = ["bible", "church", "creation", "end-times", "redemption"];
+  const categories = ["bible", "biblical-church", "creation", "end-times", "redemption"];
   categories.forEach(category => {
     eleventyConfig.addCollection(category, function(collectionApi) {
       return collectionApi.getFilteredByTag(category).sort((a, b) => {

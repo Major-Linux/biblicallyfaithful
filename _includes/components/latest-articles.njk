@@ -1,25 +1,31 @@
-<section class="latest-articles">
+<section class="latest-articles section">
   <div class="container">
-
-    <h2>Latest Articles</h2>
+    <div class="section-heading">
+      <h2>Latest Articles</h2>
+      <a href="/articles/" class="button button-outline button-accent">
+        View all articles →
+      </a>
+    </div>
 
     <div class="latest-grid">
-
-      <article class="card">
-        <h3>Article One</h3>
-        <p>Placeholder summary text.</p>
-      </article>
-
-      <article class="card">
-        <h3>Article Two</h3>
-        <p>Placeholder summary text.</p>
-      </article>
-
-      <article class="card">
-        <h3>Article Three</h3>
-        <p>Placeholder summary text.</p>
-      </article>
-
+      {% for post in collections.articles %}
+        {% if loop.index <= 6 %}
+          {% set categoryTag = "" %}
+          {% for tag in post.data.tags %}
+            {% if tag != "articles" %}{% set categoryTag = tag %}{% endif %}
+          {% endfor %}
+          <a href="{{ post.url }}" class="article-card">
+            <h3>{{ post.data.title }}</h3>
+            <div class="article-card__meta">
+              <span class="article-card__category article-card__category--{{ categoryTag }}">
+                <img src="/assets/images/icons/category-{{ categoryTag }}.png" alt="">
+                {{ categoryTag | replace("-", " ") | title }}
+              </span>
+              <span class="article-card__date">{{ post.date | postDate }}</span>
+            </div>
+          </a>
+        {% endif %}
+      {% endfor %}
     </div>
 
   </div>

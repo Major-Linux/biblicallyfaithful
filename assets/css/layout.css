@@ -28,6 +28,11 @@
     padding-block: var(--space-7);
 }
 
+.site-main {
+    padding-block: 3rem 5rem;
+}
+
+
 
 /*==================================================
   PANEL (bordered/rounded card framing)

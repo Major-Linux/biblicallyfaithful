@@ -5,7 +5,7 @@ image: /assets/images/placeholder.svg
 synopsis: A second article added to test the articles listing page, exploring how Eleventy automatically orders content by date.
 tags:
   - articles
-  - church
+  - biblical-church
 ---
 
 ## Introduction
