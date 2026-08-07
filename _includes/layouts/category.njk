@@ -1,25 +1,32 @@
 ---
 layout: layouts/base.njk
 ---
+<div class="container">
+  <div class="category-header category-header--{{ collection }}">
+    {% if categoryImage %}
+      <img src="{{ categoryImage }}" alt="{{ title }}" class="category-header__image">
+    {% endif %}
+    <h1>{{ title }}</h1>
+  </div>
 
-<div class="category-header">
-  <span class="bento__label">Category</span>
-  <h1>{{ title }}</h1>
-  <p class="category-count">{{ collections[collection].length }} article{% if collections[collection].length != 1 %}s{% endif %}</p>
+  <p class="category-count">
+    {{ collections[collection].length }} article{% if collections[collection].length != 1 %}s{% endif %}
+  </p>
+
+  {% if collections[collection].length %}
+    <div class="latest-grid">
+      {% for post in collections[collection] %}
+        <a href="{{ post.url }}" class="article-card">
+          <h3>{{ post.data.title }}</h3>
+          <p class="article-card__date">{{ post.date | postDate }}</p>
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="category-empty">No articles in this category yet. Check back soon.</p>
+  {% endif %}
+
+  <a href="/articles/" class="button button-outline button-accent category-back-link">
+    ← Back to all articles
+  </a>
 </div>
-
-{% if collections[collection].length %}
-  {% for post in collections[collection] %}
-    <article class="post-item">
-      <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
-      <p class="date">{{ post.date | postDate }}</p>
-      {% if post.data.synopsis %}
-        <p class="bento__synopsis">{{ post.data.synopsis }}</p>
-      {% endif %}
-    </article>
-  {% endfor %}
-{% else %}
-  <p>No articles in this category yet.</p>
-{% endif %}
-
-<a href="/articles/" class="read-more">← Back to all articles</a>

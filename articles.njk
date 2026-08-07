@@ -1,0 +1,32 @@
+---
+layout: layouts/base.njk
+title: Articles
+---
+<div class="container">
+  <div class="category-header">
+    <h1>All Articles</h1>
+  </div>
+
+  <p class="category-count">
+    {{ collections.articles.length }} article{% if collections.articles.length != 1 %}s{% endif %}
+  </p>
+
+  <div class="latest-grid">
+    {% for post in collections.articles %}
+      {% set categoryTag = "" %}
+      {% for tag in post.data.tags %}
+        {% if tag != "articles" %}{% set categoryTag = tag %}{% endif %}
+      {% endfor %}
+      <a href="{{ post.url }}" class="article-card">
+        <h3>{{ post.data.title }}</h3>
+        <div class="article-card__meta">
+          <span class="article-card__category article-card__category--{{ categoryTag }}">
+            <img src="/assets/images/icons/category-{{ categoryTag }}.png" alt="">
+            {{ categoryTag | replace("-", " ") | title }}
+          </span>
+          <span class="article-card__date">{{ post.date | postDate }}</span>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</div>

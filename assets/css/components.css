@@ -592,6 +592,67 @@
 
 
 /*==================================================
+  CATEGORY LANDING PAGES
+==================================================*/
+
+.category-header {
+    padding: clamp(1.5rem, 4vw, var(--space-6)) 0;
+    margin-block: var(--space-4) var(--space-5);
+    text-align: center;
+}
+
+.category-header h1 {
+    margin: var(--space-1) 0;
+}
+
+.category-header__image {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    margin-bottom: var(--space-4); 
+}
+
+.category-count {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    margin: 0;
+}
+
+.category-empty {
+    text-align: center;
+    color: var(--color-text-muted);
+    padding: var(--space-6) 0;
+}
+
+.category-back-link {
+    display: inline-block;
+    margin-top: var(--space-5);
+}
+
+/* ── Category colour theming ── */
+.category-header--bible h1 {
+    color: var(--color-bible);
+}
+
+.category-header--biblical-church h1 {
+    color: var(--color-church);
+}
+
+.category-header--creation h1 {
+    color: var(--color-creation);
+}
+
+.category-header--redemption h1 {
+    color: var(--color-redemption);
+}
+
+.category-header--end-times h1 {
+    color: var(--color-endtimes);
+}
+
+
+
+/*==================================================
   ARTICLE CARDS
 ==================================================*/
 
