@@ -9,7 +9,7 @@
 
     <div class="latest-grid">
       {% for post in collections.articles %}
-        {% if loop.index <= 6 %}
+        {% if loop.index <= 8 %}
           {% set categoryTag = "" %}
           {% for tag in post.data.tags %}
             {% if tag != "articles" %}{% set categoryTag = tag %}{% endif %}

@@ -1,7 +1,7 @@
 ---
 title: A church built with Living Stones
 date: 2026-07-31
-image: /assets/images/placeholder.svg
+image: /assets/images/church.jpg
 synopsis: When many think of 'church' they immediately think of a building meant for Christian worship. The Bible describes a different idea, that is everlasting and more personal. 
 tags:
   - articles

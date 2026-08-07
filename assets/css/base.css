@@ -95,6 +95,18 @@ a {
 /* ── Opt out: buttons and whole-card links shouldn't underline ── */
 .button:hover,
 .category-card:hover,
-.article-card:hover {
+.article-card:hover,
+.share-btn:hover,
+.post-nav__title:hover {
     text-decoration: none;
+}
+
+/*==================================================
+  PAGE CONTENT (static pages: About, Privacy, etc)
+==================================================*/
+
+.page-content {
+    padding: clamp(1.5rem, 4vw, var(--space-6));
+    margin-block: var(--space-5);
+    max-width: var(--reading-width);
 }

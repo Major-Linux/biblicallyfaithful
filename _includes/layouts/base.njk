@@ -38,44 +38,44 @@
 
 
   <!-- 8. Schema Markup (last, before fonts and CSS) -->
-  {% if synopsis %}
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "{{ title }}",
-      "description": "{{ synopsis }}",
-      "image": "{{ 'https://biblicallyfaithful.org' + image if image else 'https://biblicallyfaithful.org/assets/images/placeholder.svg' }}",
-      "datePublished": "{{ date }}",
-      "keywords": "{{ tags | reject('equalto', 'articles') | join(', ') }}",
-      "articleSection": "{{ tags | reject('equalto', 'articles') | first | title }}",
-      "author": {
-        "@type": "Person",
-        "name": "Brian",
-        "url": "https://biblicallyfaithful.org/about/"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Biblically Faithful",
-        "url": "https://biblicallyfaithful.org"
-      },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://biblicallyfaithful.org{{ page.url }}"
-      }
-    }     
-    </script>
-
-  {% else %}
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
+  {% if synopsis and tags %}
+  <script type="application/ld+json">
+  
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{ title }}",
+    "description": "{{ synopsis }}",
+    "image": "{{ 'https://biblicallyfaithful.org' + image if image else 'https://biblicallyfaithful.org/assets/images/placeholder.svg' }}",
+    "datePublished": "{{ date }}",
+    "keywords": "{{ tags | reject('equalto', 'articles') | join(', ') }}",
+    "articleSection": "{{ tags | reject('equalto', 'articles') | first | title }}",
+    "author": {
+      "@type": "Person",
+      "name": "Brian",
+      "url": "https://biblicallyfaithful.org/about/"
+    },
+    "publisher": {
+      "@type": "Organization",
       "name": "Biblically Faithful",
-      "url": "https://biblicallyfaithful.org",
-      "description": "Honouring the Bible, Honouring God. Articles exploring Scripture with faithfulness and integrity."
+      "url": "https://biblicallyfaithful.org"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://biblicallyfaithful.org{{ page.url }}"
     }
-    </script>
+  }
+  </script>
+  {% else %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Biblically Faithful",
+    "url": "https://biblicallyfaithful.org",
+    "description": "Honouring the Bible, Honouring God. Articles exploring Scripture with faithfulness and integrity."
+  }
+  </script>
   {% endif %}
 
 
@@ -105,11 +105,10 @@
 <header class="site-header">
   <div class="container site-header__inner">
     <a class="site-branding" href="/">
-      <h1 class="site-branding__title">
+      <p class="site-branding__title">
         Biblically Faithful
-      </h1>        
+      </p>        
     </a>
-
     <nav class="site-nav-desktop">
       <a href="/">Home</a>
       <a href="/biblical-church/">Biblical Church</a>

@@ -1,10 +1,15 @@
 import * as yaml from "js-yaml"; 
 import rssPlugin from "@11ty/eleventy-plugin-rss";
 import Image from "@11ty/eleventy-img";
+import markdownIt from "markdown-it";
+import markdownItCallouts from "markdown-it-callouts";
 
 export default function(eleventyConfig) {
   // Add YAML parsing extension for the _data directory
   eleventyConfig.addDataExtension("yaml, yml", (contents) => yaml.load(contents));
+  // Markdown-it with callouts support (Obsidian-style callout syntax)
+  const md = markdownIt({ html: true }).use(markdownItCallouts);
+  eleventyConfig.setLibrary("md", md);
   eleventyConfig.addPlugin(rssPlugin);
   eleventyConfig.addPassthroughCopy("assets");
   
@@ -127,3 +132,4 @@ export default function(eleventyConfig) {
     }
   };
 };
+

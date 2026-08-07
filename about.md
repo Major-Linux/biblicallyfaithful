@@ -1,7 +1,8 @@
 ---
-layout: layouts/base.njk
+layout: layouts/page.njk
 title: About
 ---
+
 # About Biblically Faithful
 
 _**In Progress**: This page is till being put together, but it is deemed helpful to have a basic draft here to serve as an outline._
@@ -11,7 +12,7 @@ _**In Progress**: This page is till being put together, but it is deemed helpful
 - There is a God
 - Jesus Christ is the son of God
 - The Bible speaks to
-	- God’s nature    
+    - God’s nature    
     - God’s will    
     - The promise of eternal life with God
 - God provides forgiveness of our sins and through Jesus

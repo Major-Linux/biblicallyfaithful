@@ -13,6 +13,7 @@
                 >
             </div>
             <div class="biblical-church-content">
+                {% set latestChurchPost = collections["biblical-church"][0] %}
                 <article class="church-feature">
                     <div class="feature-row">
                         <div class="icon-box">
@@ -22,16 +23,20 @@
                             <p class="feature__eyebrow">
                                 Latest Biblical Church Article
                             </p>
-                            <h3>
-                                What Does the Bible Teach About the Church?
-                            </h3>
-                            <p>
-                                A summary of the Bible's teaching on the nature,
-                                purpose and mission of the church.
-                            </p>
-                            <a class="button button-filled button-church" href="#">
-                                Read Article →
-                            </a>
+                            {% if latestChurchPost %}
+                                <h3>
+                                    {{ latestChurchPost.data.title }}
+                                </h3>
+                                <p>
+                                    {{ latestChurchPost.data.synopsis }}
+                                </p>
+                                <a class="button button-filled button-church" href="{{ latestChurchPost.url }}">
+                                    Read Article →
+                                </a>
+                            {% else %}
+                                <h3>No articles yet</h3>
+                                <p>Check back soon for the latest Biblical Church article.</p>
+                            {% endif %}
                         </div>
                     </div>
                 </article>
@@ -49,7 +54,7 @@
                                 church, and church leaders comparing practice with
                                 Scripture.
                             </p>
-                            <a class="button button-filled button-church" href="/biblical-church/">
+                            <a class="button button-filled button-church" href="/what-is-a-biblical-church/">
                                 Explore →
                             </a>
                         </div>

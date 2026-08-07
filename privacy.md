@@ -1,4 +1,5 @@
 ---
+layout: layouts/page.njk
 title: Privacy Notice
 ---
 
@@ -8,7 +9,7 @@ title: Privacy Notice
 
 ## Who We Are
 
- is a website dedicated to exploring the Bible with faithfulness and integrity. This site is operated as a personal ministry website and is not a commercial enterprise.
+is a website dedicated to exploring the Bible with faithfulness and integrity. This site is operated as a personal ministry website and is not a commercial enterprise.
 
 Our website address is: **https://biblicallyfaithful.org**
 

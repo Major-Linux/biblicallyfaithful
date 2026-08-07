@@ -55,52 +55,59 @@ layout: layouts/base.njk
 </div>
 {% endmacro %}
 
-<article>
-  <header>
-    <h1>{{ title }}</h1>
-    <div class="article-meta">
-      <span class="date">{{ date | postDate }}</span>
-      <span class="meta-divider">·</span>
-      <span class="reading-time">{{ content | readingTime }}</span>
-    </div>
-    <div class="article-categories">
-      {% for tag in tags %}
-        {% if tag != "articles" %}
-          <a href="/{{ tag }}/" class="article-category">{{ tag | title }}</a>
-        {% endif %}
-      {% endfor %}
+<div class="container">
+  <article class="article-panel panel">
+    {% if image %}
+      <img src="{{ image }}" alt="{{ imageAlt if imageAlt else title }}" class="article-banner">
+    {% endif %}
+    <header>
+      <div class="article-title-row">
+        <h1>{{ title }}</h1>
+        <div class="article-categories">
+          {% for tag in tags %}
+            {% if tag != "articles" %}
+              <a href="/{{ tag }}/" class="article-category article-category--{{ tag }}">{{ tag | replace("-", " ") | title }}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="article-meta">
+        <span class="date">{{ date | postDate }}</span>
+        <span class="meta-divider">·</span>
+        <span class="reading-time">{{ content | readingTime }}</span>
+      </div>
+      {{ shareButtons() }}
+    </header>
+    <div class="content">
+      {{ content | safe }}
     </div>
     {{ shareButtons() }}
-  </header>
-  <div class="content">
-    {{ content | safe }}
-  </div>
-  {{ shareButtons() }}
-</article>
+  </article>
 
-{% set previousPost = collections.articles | previousPost(page) %}
-{% set nextPost = collections.articles | nextPost(page) %}
+  {% set previousPost = collections.articles | previousPost(page) %}
+  {% set nextPost = collections.articles | nextPost(page) %}
 
-{% if previousPost or nextPost %}
-<nav class="post-nav">
-  <div class="post-nav__prev">
-    {% if previousPost %}
-      <span class="post-nav__label">← Previous</span>
-      <a href="{{ previousPost.url }}" class="post-nav__title">
-        {{ previousPost.data.title }}
-      </a>
-    {% endif %}
-  </div>
-  <div class="post-nav__next">
-    {% if nextPost %}
-      <span class="post-nav__label">Next →</span>
-      <a href="{{ nextPost.url }}" class="post-nav__title">
-        {{ nextPost.data.title }}
-      </a>
-    {% endif %}
-  </div>
-</nav>
-{% endif %}
+  {% if previousPost or nextPost %}
+  <nav class="post-nav">
+    <div class="post-nav__prev">
+      {% if previousPost %}
+        <span class="post-nav__label">← Previous</span>
+        <a href="{{ previousPost.url }}" class="post-nav__title">
+          {{ previousPost.data.title }}
+        </a>
+      {% endif %}
+    </div>
+    <div class="post-nav__next">
+      {% if nextPost %}
+        <span class="post-nav__label">Next →</span>
+        <a href="{{ nextPost.url }}" class="post-nav__title">
+          {{ nextPost.data.title }}
+        </a>
+      {% endif %}
+    </div>
+  </nav>
+  {% endif %}
+</div>
 
 <script>
 function copyLink() {
