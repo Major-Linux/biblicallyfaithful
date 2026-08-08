@@ -1,22 +1,30 @@
+{% set latestScripture = collections["featured-scripture"][0] %}
 <section class="featured-scripture section">
   <div class="container">
     <div class="featured-scripture__card panel">
       <div class="featured-scripture__reference">
         <p class="feature__eyebrow">Featured Scripture</p>
-        <h2>{{ featuredScripture.reference }}</h2>
-        <a href="{{ featuredScripture.article }}" class="button button-filled button-bible">
-          Related Article →
-        </a>
+        {% if latestScripture %}
+          <h2>{{ latestScripture.data.scriptureReference }}</h2>
+          <a href="{{ latestScripture.url }}" class="button button-filled button-featured-scripture">
+            Related Article →
+          </a>
+        {% else %}
+          <h2>Coming Soon</h2>
+        {% endif %}
       </div>
       <div class="featured-scripture__content">
-        <blockquote>
-          "{{ featuredScripture.text }}"
-        </blockquote>
-        
-        <cite>
-          {{ featuredScripture.referenceShort }} ({{ featuredScripture.versionAbbr }})
-        </cite>
-        
+        {% if latestScripture %}
+          <blockquote>
+            "{{ latestScripture.data.scriptureText }}"
+          </blockquote>
+          
+            <cite>{{ latestScripture.data.scriptureReferenceShort }}</cite>  ({{ latestScripture.data.scriptureVersionAbbr }})
+            
+          
+        {% else %}
+          <p>Check back soon for a featured scripture passage.</p>
+        {% endif %}
       </div>
     </div>
   </div>

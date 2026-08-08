@@ -20,7 +20,10 @@
   /* --color-border: #d8dde5; */
   --color-border: #88a6d7;
 
-  
+  /* Featured Scripture */
+    --color-featured-scripture: #8a6d3b;
+    --color-featured-scripture-bg: #fdf8f0;
+    --color-featured-scripture-border: #ecdfc4;
 
   
 /*==================================================
@@ -140,6 +143,12 @@
   /* Colour Accents */
   --color-accent: #f2c45b;
   --color-accent-contrast: #1d1d1b;
+
+  /* Featured Scripture */
+    --color-featured-scripture: #d4b876;
+    --color-featured-scripture-bg: #2e2717;
+    --color-featured-scripture-border: #5c4d2c;
+
 
 /*==================================================
     CATEGORY COLOURS

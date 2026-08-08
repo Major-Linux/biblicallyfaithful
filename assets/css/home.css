@@ -146,12 +146,18 @@
 }
 
 .featured-scripture__content cite {
-    display: block;
+    display: inline;
     margin-top: var(--space-2);
     font-size: var(--text-sm);
     color: var(--color-text);
-    font-style: normal; 
-    font-weight: var(--weight-bold);        
+    font-style: normal;
+    font-weight: var(--weight-bold);
+}
+
+.featured-scripture__reference h2 {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    color: var(--color-featured-scripture);
+    margin: 0 0 var(--space-3);
 }
 
 
