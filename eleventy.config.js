@@ -80,7 +80,8 @@ export default function(eleventyConfig) {
 
 
   // Video card shortcode
-  eleventyConfig.addShortcode("videocard", (id, title, summary, runtime, date) => {
+  eleventyConfig.addShortcode("videocard", (id, title, runtime, date) => {
+    const youtubeUrl = `https://www.youtube.com/watch?v=${id}`;
     return `
       <div class="video-card">
         <div class="video-card__player">
@@ -95,11 +96,10 @@ export default function(eleventyConfig) {
           </div>
         </div>
         <div class="video-card__details">
-          <h3 class="video-card__title">${title}</h3>
-          <p class="video-card__summary">${summary}</p>
           <ul class="video-card__meta">
-            ${runtime ? `<li><span class="meta-label">⏱ Runtime</span> ${runtime}</li>` : ''}
-            ${date ? `<li><span class="meta-label">📅 Published</span> ${date}</li>` : ''}
+            ${date ? `<li><span class="video-card__meta-label">Published</span> ${date}</li>` : ''}
+            ${runtime ? `<li><span class="video-card__meta-label">Runtime</span> ${runtime}</li>` : ''}
+            <li><span class="video-card__meta-label">Watch on YouTube</span> <a href="${youtubeUrl}" target="_blank" rel="noopener noreferrer">${youtubeUrl}</a></li>
           </ul>
         </div>
       </div>

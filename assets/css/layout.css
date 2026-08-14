@@ -153,6 +153,12 @@
     color: inherit;
 }
 
+@media (hover: hover) {
+    .site-branding:hover {
+        text-decoration: none;
+    }
+}
+
 .site-branding__title {
     margin: 0;
     font-size: clamp(1.8rem, 3vw, 2.4rem);
@@ -193,6 +199,7 @@
 @media (hover: hover) {
     .site-nav-desktop a:hover {
         color: var(--color-accent);
+        text-decoration: underline;
     }
 }
 

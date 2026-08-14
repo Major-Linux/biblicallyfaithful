@@ -140,6 +140,12 @@
     }
 }
 
+.category-back-link {
+    display: inline-block;
+    margin-top: var(--space-5); 
+}
+
+
 
 /*==================================================
   CARDS
@@ -195,45 +201,29 @@
 ==================================================*/
 
 .feature {
-
     max-width: 720px;
-
 }
 
 .feature__eyebrow {
-
     margin-bottom: .75rem;
-
     font-size: .8rem;
-
     font-weight: var(--weight-semibold);
-
     letter-spacing: .15em;
-
     text-transform: uppercase;
-
     color: var(--color-text-muted);
-
 }
 
 .feature__title {
-
     margin-bottom: 1.25rem;
-
 }
 
 .feature__text {
-
     max-width: 60ch;
-
     color: var(--color-text);
-
 }
 
 .feature .button {
-
     margin-top: var(--space-4);
-
 }
 
 
@@ -258,7 +248,7 @@
 }
 
 .article-title-row {
-    /* align-items: flex-start; */
+    margin-top: var(--space-4); 
 }
 
 .article-title-row h1 {
@@ -294,19 +284,37 @@
 }
 
 .article-banner {
-    width: calc(100% + 2 * clamp(1.5rem, 4vw, var(--space-6)));
-    margin: calc(-1 * clamp(1.5rem, 4vw, var(--space-6))) calc(-1 * clamp(1.5rem, 4vw, var(--space-6))) var(--space-5);
+    width: 100%;
     aspect-ratio: 16 / 6;
     object-fit: cover;
     object-position: center;
     display: block;
-    border-radius: var(--radius) var(--radius) 0 0; 
+    border-radius: var(--radius);
+    margin-bottom: var(--space-5); 
 }
 
+.article-panel .content {
+    max-width: 60rem;
+    margin-inline: auto; 
+}
 
+/*
 .article-panel .content {
     max-width: var(--reading-width);
     margin-top: var(--space-5);
+}
+*/
+
+.article-panel header {
+    max-width: 60rem;
+    margin-inline: auto;
+    margin-bottom: var(--space-5);
+}
+
+.article-panel>.share-buttons {
+    max-width: 60rem;
+    margin-inline: auto;
+    margin-top: var(--space-5); 
 }
 
 .article-panel .content h2 {
@@ -316,6 +324,82 @@
 .article-panel .content p {
     margin-bottom: var(--paragraph-spacing);
 }
+
+
+/*==================================================
+  VIDEO CARD
+==================================================*/
+
+.video-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+    margin: var(--space-5) 0;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.video-card__player {
+    background: #000;
+    display: flex;
+    align-items: center;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    width: 100%; 
+}
+
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.video-card__details {
+    display: flex;
+    align-items: center;
+    padding: var(--space-4);
+}
+
+.video-card__meta {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.video-card__meta-label {
+    display: block;
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--color-text-muted);
+    margin-bottom: 0.2rem;
+}
+
+.video-card__meta a {
+    word-break: break-all;
+}
+
+/* ── Mobile: stack vertically ── */
+@media (max-width: 700px) {
+    .video-card {
+        grid-template-columns: 1fr;
+    }
+}
+
+
 
 /*==================================================
   SHARE BUTTONS
@@ -372,23 +456,33 @@
     text-align: right;
 }
 
-.post-nav__label {
+.post-nav__link {
     display: block;
-    font-size: var(--text-sm);
-    color: var(--color-text-muted);
-    margin-bottom: var(--space-1);
-}
-
-.post-nav__title {
-    font-weight: var(--weight-semibold);
-    color: var(--color-heading);
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
     text-decoration: none;
+    transition: border-color var(--transition), transform var(--transition);
 }
 
 @media (hover: hover) {
-    .post-nav__title:hover {
-        color: var(--color-accent);
+    .post-nav__link:hover {
+        border-color: var(--color-accent);
+        transform: translateY(-2px);
     }
+}
+
+.post-nav__label {
+    display: inline;
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin: 0 var(--space-2);
+}
+
+.post-nav__title {
+    display: inline;
+    font-weight: var(--weight-semibold);
+    color: var(--color-heading);
 }
 
 @media (max-width: 600px) {
@@ -400,7 +494,6 @@
         text-align: left;
     }
 }
-
 
 
 /*==================================================
@@ -607,69 +700,52 @@
     text-decoration: none;
 }
 
-
-
 /*==================================================
   CATEGORY LANDING PAGES
 ==================================================*/
-
 .category-header {
-    padding: clamp(1.5rem, 4vw, var(--space-6)) 0;
+    aspect-ratio: 16 / 6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius);
     margin-block: var(--space-4) var(--space-5);
+    padding: var(--space-4);
     text-align: center;
 }
 
 .category-header h1 {
-    margin: var(--space-1) 0;
-}
-
-.category-header__image {
-    max-width: 100%;
-    height: auto;
-    border-radius: var(--radius);
-    margin-bottom: var(--space-4); 
-}
-
-.category-count {
-    color: var(--color-text-muted);
-    font-size: var(--text-sm);
     margin: 0;
+    color: #ffffff;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    text-transform: uppercase;
+    letter-spacing: 0.02em; 
 }
 
-.category-empty {
-    text-align: center;
-    color: var(--color-text-muted);
-    padding: var(--space-6) 0;
+/* ── Category gradient backgrounds ── */
+.category-header--bible {
+    background: linear-gradient(135deg, var(--color-bible), var(--color-bible-border));
 }
 
-.category-back-link {
-    display: inline-block;
-    margin-top: var(--space-5);
+.category-header--biblical-church {
+    background: linear-gradient(135deg, var(--color-church), var(--color-church-border));
 }
 
-/* ── Category colour theming ── */
-.category-header--bible h1 {
-    color: var(--color-bible);
+.category-header--creation {
+    background: linear-gradient(135deg, var(--color-creation), var(--color-creation-border));
 }
 
-.category-header--biblical-church h1 {
-    color: var(--color-church);
+.category-header--redemption {
+    background: linear-gradient(135deg, var(--color-redemption), var(--color-redemption-border));
 }
 
-.category-header--creation h1 {
-    color: var(--color-creation);
+.category-header--end-times {
+    background: linear-gradient(135deg, var(--color-endtimes), var(--color-endtimes-border));
 }
 
-.category-header--redemption h1 {
-    color: var(--color-redemption);
-}
-
-.category-header--end-times h1 {
-    color: var(--color-endtimes);
-}
-
-.category-header--featured-scripture h1 {
-    color: var(--color-featured-scripture);
+.category-header--featured-scripture {
+    background: linear-gradient(135deg, var(--color-featured-scripture), var(--color-featured-scripture-border)); 
 }
 
 /*==================================================
@@ -771,28 +847,24 @@
 ==================================================*/
 
 .icon-box {
-
     width: 3rem;
     height: 3rem;
-
     display: grid;
     place-items: center;
-
     border-radius: var(--radius);
-
-    color: var(--accent);
     background: var(--color-surface-alt);
-    --icon-gap-color: var(--color-surface-alt);
+    font-size: 1.4rem; 
+}
 
-    font-size: 1.4rem;
-
+[data-theme="dark"] .icon-box img,
+[data-theme="dark"] .article-card__category img,
+[data-theme="dark"] .category-card__icon img {
+    filter: brightness(1.8);
 }
 
 .icon-box img {
-
     width: 1.75rem;
     height: 1.75rem;
-
 }
 
 
@@ -968,8 +1040,15 @@
     background: var(--color-bible-bg);
     font-family: var(--font-heading);
     font-size: var(--text-lg);
-    font-style: italic;
+    /* font-style: italic; */
     color: var(--color-heading);
+    line-height: 1.4;
+}
+
+@media (max-width: 600px) {   
+    .callout-scripture { 
+        line-height: 1.2; 
+    }    
 }
 
 .callout-scripture strong {

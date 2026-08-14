@@ -91,17 +91,17 @@ layout: layouts/base.njk
   <nav class="post-nav">
     <div class="post-nav__prev">
       {% if previousPost %}
-        <span class="post-nav__label">← Previous</span>
-        <a href="{{ previousPost.url }}" class="post-nav__title">
-          {{ previousPost.data.title }}
+        <a href="{{ previousPost.url }}" class="post-nav__link">
+          <span class="post-nav__label">← Previous</span> 
+          <span class="post-nav__title">{{ previousPost.data.title }}</span>
         </a>
       {% endif %}
     </div>
     <div class="post-nav__next">
       {% if nextPost %}
-        <span class="post-nav__label">Next →</span>
-        <a href="{{ nextPost.url }}" class="post-nav__title">
-          {{ nextPost.data.title }}
+        <a href="{{ nextPost.url }}" class="post-nav__link">          
+          <span class="post-nav__title">{{ nextPost.data.title }}</span>
+          <span class="post-nav__label">Next →</span>
         </a>
       {% endif %}
     </div>

@@ -10,13 +10,19 @@ tags:
    
 Upon this rock (testimony of faith) I will build my church (singular)
     
-For there is one body, on baptism, one god and father of us all
-   
+For there is one body, [on baptism](https://www.baptist.org.uk/Groups/220594/Believers_Baptism.aspx), one god and father of us all
+
 
 ## Do you see these stones?
  
-The central place of worship, built over forty six years. God blessed the building of it in Solomon and God's presence dwelt there.
- _19 Jesus answered and said unto them, Destroy this temple, and in three days I will raise it up._ _20 Then said the Jews, Forty and six years was this temple in building, and wilt thou rear it up in three days?_ _21 But he spake of the temple of his body._ _John 2:19-21_   
+The central place of <a href="https://www.baptistdistinctives.org/resources/articles/baptists-worship/index.html">worship</a>, built over forty six years. God blessed the building of it in Solomon and God's presence dwelt there.
+
+> [!SCRIPTURE]
+ 19 Jesus answered and said unto them, Destroy this temple, and in three days I will raise it up. <br>
+ 20 Then said the Jews, Forty and six years was this temple in building, and wilt thou rear it up in three days? <br>
+ 21 But he spake of the temple of his body.
+ **John 2:19-21**
+
 ## The kingdom will be taken away from you
  _42 Jesus saith unto them, Did ye never read in the scriptures, The stone which the builders rejected, the same is become the head of the corner: this is the Lord's doing, and it is marvellous in our eyes?_ _43 Therefore say I unto you, The kingdom of God shall be taken from you, and given to a nation bringing forth the fruits thereof._ _Matthew 21:42-43_     
 _1 And Jesus went out, and departed from the temple: and his disciples came to him for to shew him the buildings of the temple._ _2 And Jesus said unto them, See ye not all these things? verily I say unto you, There shall not be left here one stone upon another, that shall not be thrown down._ _Matthew 24:1-2_      

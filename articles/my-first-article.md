@@ -12,11 +12,16 @@ tags:
 
 This is my first article on Biblically Faithful. [More meaningful](/about.md) content will follow as the site develops.
 
-{% callout "The word of God is living and active, sharper than any two-edged sword — Hebrews 4:12" %}
+<!-- {% callout "The word of God is living and active, sharper than any two-edged sword — Hebrews 4:12" %} -->
 
-## Watch This Video
+> [!SCRIPTURE] 
+The word of God is living and active, sharper than any two-edged sword npx The word of God is living and active, sharper than any two-edged sword npx The word of God is living and active, sharper than any two-edged sword npx 
+> **Hebrews 4:12**
 
-{% videocard "4UbXGjoCnYY", "Understanding Grace", "In this video we explore what the Bible says about grace and how it applies to everyday life as a believer.", "12:34", "11 May 2026" %}
+<!-- YouTube video card -->
+{% videocard "4UbXGjoCnYY", "Understanding Grace",  "12:34", "11 May 2026" %}
+
+<!-- video summary: "In this video we explore what the Bible says about grace and how it applies to everyday life as a believer.", -->
 
 ## A Verse to Start
 

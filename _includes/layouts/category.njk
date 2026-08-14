@@ -3,9 +3,7 @@ layout: layouts/base.njk
 ---
 <div class="container">
   <div class="category-header category-header--{{ collection }}">
-    {% if categoryImage %}
-      <img src="{{ categoryImage }}" alt="{{ title }}" class="category-header__image">
-    {% endif %}
+    
     <h1>{{ title }}</h1>
   </div>
 
@@ -27,6 +25,6 @@ layout: layouts/base.njk
   {% endif %}
 
   <a href="/articles/" class="button button-outline button-accent category-back-link">
-    ← Back to all articles
+    ← All articles
   </a>
 </div>

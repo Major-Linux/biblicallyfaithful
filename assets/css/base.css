@@ -20,29 +20,25 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    margin: 0;
-}
-
 /*==================================================
   TYPOGRAPHY
 ==================================================*/
 
 body {
-
     margin: 0;
-
     font-family: var(--font-body);
-
     font-size: var(--text-base);
-
     line-height: 1.7;
-
     background: var(--color-bg);
-
     color: var(--color-text);
-
 }
+
+@media (max-width: 600px) {
+    body {
+        line-height: 1.4;
+    } 
+}
+
 
 h1,
 h2,
@@ -81,6 +77,13 @@ blockquote {
 /* ==========================================
    GLOBAL LINKS (article/body content)
 ========================================== */
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; 
+}
+
 a {
     color: var(--color-accent);
     text-decoration: none;
@@ -97,7 +100,7 @@ a {
 .category-card:hover,
 .article-card:hover,
 .share-btn:hover,
-.post-nav__title:hover {
+.post-nav__link:hover {
     text-decoration: none;
 }
 
