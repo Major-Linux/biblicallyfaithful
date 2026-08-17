@@ -22,6 +22,10 @@ export default function(eleventyConfig) {
     });
   });
 
+  eleventyConfig.addFilter("isoDate", (date) => {
+    return new Date(date).toISOString().split('T')[0];
+  });
+
 
 // Reading time filter
   eleventyConfig.addFilter("readingTime", (content) => {

@@ -47,7 +47,7 @@
     "headline": "{{ title }}",
     "description": "{{ synopsis }}",
     "image": "{{ 'https://biblicallyfaithful.org' + image if image else 'https://biblicallyfaithful.org/assets/images/placeholder.svg' }}",
-    "datePublished": "{{ date }}",
+    "datePublished": "{{ date | isoDate }}",
     "keywords": "{{ tags | reject('equalto', 'articles') | join(', ') }}",
     "articleSection": "{{ tags | reject('equalto', 'articles') | first | title }}",
     "author": {

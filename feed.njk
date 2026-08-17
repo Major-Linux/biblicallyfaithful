@@ -14,16 +14,18 @@ eleventyExcludeFromCollections: true
     <name>Biblically Faithful</name>
     <email>hello@biblicallyfaithful.org</email>
   </author>
-  {%- for post in collections.articles | slice(0, 10) %}
-  <entry>
-    <title>{{ post.data.title }}</title>
-    <link href="https://biblicallyfaithful.org{{ post.url }}"/>
-    <id>https://biblicallyfaithful.org{{ post.url }}</id>
-    <updated>{{ post.date | dateToRfc3339 }}</updated>
-    <published>{{ post.date | dateToRfc3339 }}</published>
-    {% if post.data.synopsis %}
-    <summary>{{ post.data.synopsis }}</summary>
-    {% endif %}
-  </entry>
+  {%- for post in collections.articles %}
+    {%- if loop.index <= 10 %}
+    <entry>
+      <title>{{ post.data.title }}</title>
+      <link href="https://biblicallyfaithful.org{{ post.url }}"/>
+      <id>https://biblicallyfaithful.org{{ post.url }}</id>
+      <updated>{{ post.date | dateToRfc3339 }}</updated>
+      <published>{{ post.date | dateToRfc3339 }}</published>
+      {% if post.data.synopsis %}
+      <summary>{{ post.data.synopsis }}</summary>
+      {% endif %}
+    </entry>
+    {%- endif %}
   {%- endfor %}
 </feed>
