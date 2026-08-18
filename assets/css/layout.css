@@ -178,6 +178,18 @@
     gap: var(--space-2);
 }
 
+.rss-link {
+    display: flex;
+    align-items: center;
+    color: var(--color-text);
+}
+
+@media (hover: hover) {
+    .rss-link:hover {
+        color: var(--color-accent);
+    } }
+
+
 
 /* ==========================================
    DESKTOP/TABLET NAV

@@ -12,6 +12,7 @@ export default function(eleventyConfig) {
   eleventyConfig.setLibrary("md", md);
   eleventyConfig.addPlugin(rssPlugin);
   eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy("favicon.png");
   
   // Date filter
   eleventyConfig.addFilter("postDate", (date) => {
