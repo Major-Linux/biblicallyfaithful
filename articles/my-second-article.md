@@ -1,7 +1,7 @@
 ---
 title: My Second Article
 date: 2026-05-12
-image: /assets/images/church.jpg
+image: /assets/images/dove-church.webp
 synopsis: A second article added to test the articles listing page, exploring how Eleventy automatically orders content by date.
 tags:
   - articles

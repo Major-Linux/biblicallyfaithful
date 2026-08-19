@@ -100,7 +100,9 @@ a {
 .category-card:hover,
 .article-card:hover,
 .share-btn:hover,
-.post-nav__link:hover {
+.post-nav__title:hover,
+.post-nav__link:hover,
+.related-card:hover {
     text-decoration: none;
 }
 

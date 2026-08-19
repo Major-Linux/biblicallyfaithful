@@ -46,14 +46,14 @@
   --color-creation-border: #d7eadb;
 
   /* Redemption */
-  --color-redemption: #a23d3d;
-  --color-redemption-bg: #fff7f7;
-  --color-redemption-border: #efd5d5;
+  --color-redemption: #6f4ab4;
+  --color-redemption-bg: #faf8ff;
+  --color-redemption-border: #e2d8f6;
 
   /* End Times */
-  --color-endtimes: #6f4ab4;
-  --color-endtimes-bg: #faf8ff;
-  --color-endtimes-border: #e2d8f6;
+  --color-endtimes: #a23d3d;
+  --color-endtimes-bg: #fff7f7;
+  --color-endtimes-border: #efd5d5;
 
   /* Colour Accents */ 
   --color-accent: #2d67b3;
@@ -170,14 +170,14 @@
   --color-creation-border: #3b6843;
 
   /* Redemption */
-  --color-redemption: #ef8c8c;
-  --color-redemption-bg: #321d1d;
-  --color-redemption-border: #6d3a3a;
+  --color-redemption: #b89dff;
+  --color-redemption-bg: #282036;
+  --color-redemption-border: #57497d;
 
   /* End Times */
-  --color-endtimes: #b89dff;
-  --color-endtimes-bg: #282036;
-  --color-endtimes-border: #57497d;
+  --color-endtimes: #ef8c8c;
+  --color-endtimes-bg: #321d1d;
+  --color-endtimes-border: #6d3a3a;
 
 }
 

@@ -172,7 +172,107 @@
 }
 
 
+/*==================================================
+  RELATED ARTICLE CARDS
+==================================================*/
 
+.related-articles {
+    margin-bottom: var(--space-6);
+}
+
+.related-articles__heading {
+    margin-bottom: var(--space-4);
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 320px));
+    gap: var(--space-4); 
+}
+
+.related-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color var(--transition), transform var(--transition);
+}
+
+@media (hover: hover) {
+    .related-card:hover {
+        border-color: var(--color-accent);
+        transform: translateY(-2px);
+    }
+}
+
+.related-card__thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.related-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-3);
+    flex-grow: 1;
+}
+
+.related-card__title {
+    font-size: var(--text-base);
+    margin: 0;
+}
+
+.related-card__synopsis {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin: 0;
+    flex-grow: 1;
+}
+
+.related-card__category {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.related-card__category img {
+    width: 1rem;
+    height: 1rem;
+    object-fit: contain;
+}
+
+.related-card__category--bible {
+    color: var(--color-bible);
+}
+
+.related-card__category--biblical-church {
+    color: var(--color-church);
+}
+
+.related-card__category--creation {
+    color: var(--color-creation);
+}
+
+.related-card__category--redemption {
+    color: var(--color-redemption);
+}
+
+.related-card__category--end-times {
+    color: var(--color-endtimes);
+}
+
+.related-card__category--featured-scripture {
+    color: var(--color-featured-scripture);
+}
 
 
 /*==================================================
@@ -842,6 +942,7 @@
     color: var(--color-endtimes);
 }
 
+
 /*==================================================
   ICON BOXES
 ==================================================*/
@@ -856,9 +957,10 @@
     font-size: 1.4rem; 
 }
 
-[data-theme="dark"] .icon-box img,
-[data-theme="dark"] .article-card__category img,
-[data-theme="dark"] .category-card__icon img {
+[data-theme="dark"] .biblical-church-home .icon-box img,
+[data-theme="dark"] .article-card__category--biblical-church img,
+[data-theme="dark"] .category-card--church .category-card__icon img,
+[data-theme="dark"] .related-card__category--biblical-church img {
     filter: brightness(1.8);
 }
 

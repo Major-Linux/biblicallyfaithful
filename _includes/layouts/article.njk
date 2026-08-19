@@ -107,6 +107,49 @@ layout: layouts/base.njk
     </div>
   </nav>
   {% endif %}
+
+
+{% set currentCategory = "" %}
+{% for tag in tags %}
+  {% if tag != "articles" %}{% set currentCategory = tag %}{% endif %}
+{% endfor %}
+
+{% if currentCategory %}
+  {% set relatedPosts = [] %}
+  {% for post in collections[currentCategory] %}
+    {% if post.url != page.url and relatedPosts.length < 3 %}
+      {% set relatedPosts = (relatedPosts.push(post), relatedPosts) %}
+    {% endif %}
+  {% endfor %}
+
+  {% if relatedPosts.length %}
+    <section class="related-articles">
+      <h2 class="related-articles__heading">Related Articles</h2>
+      <div class="related-grid">
+        {% for post in relatedPosts %}
+          <a href="{{ post.url }}" class="related-card">
+            {% if post.data.image %}
+              {% set thumbPath = post.data.image | replace(".jpg", "_thumb.jpg") | replace(".jpeg", "_thumb.jpeg") | replace(".png", "_thumb.png") | replace(".webp", "_thumb.webp") %}
+              <img src="{{ thumbPath }}" alt="" class="related-card__thumb" loading="lazy">
+            {% endif %}
+            <div class="related-card__body">
+              <h3 class="related-card__title">{{ post.data.title }}</h3>
+              {% if post.data.synopsis %}
+                <p class="related-card__synopsis">{{ post.data.synopsis | truncate(90) }}</p>
+              {% endif %}
+              <span class="related-card__category related-card__category--{{ currentCategory }}">
+                <img src="/assets/images/icons/category-{{ currentCategory }}.png" alt="">
+                {{ currentCategory | replace("-", " ") | title }}
+              </span>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+{% endif %}
+
+
 </div>
 
 <script>
