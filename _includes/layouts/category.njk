@@ -16,7 +16,12 @@ layout: layouts/base.njk
       {% for post in collections[collection] %}
         <a href="{{ post.url }}" class="article-card">
           <h3>{{ post.data.title }}</h3>
-          <p class="article-card__date">{{ post.date | postDate }}</p>
+          {% if post.data.synopsis %}
+            <p class="article-card__synopsis">{{ post.data.synopsis }}</p>
+          {% endif %}
+          <div class="article-card__meta">
+            <span class="article-card__date">{{ post.date | postDate }}</span>
+          </div>
         </a>
       {% endfor %}
     </div>

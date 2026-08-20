@@ -59,6 +59,10 @@
   --color-accent: #2d67b3;
   --color-accent-contrast: #f7fbff;
 
+  /* All Articles (neutral) */
+    --color-neutral: #3a3a3a;
+    --color-neutral-border: #6b6b6b;
+
 
   /* Fonts */
 
@@ -178,6 +182,10 @@
   --color-endtimes: #ef8c8c;
   --color-endtimes-bg: #321d1d;
   --color-endtimes-border: #6d3a3a;
+
+  /* All Articles (neutral) */
+    --color-neutral: #6b6b6b;
+    --color-neutral-border: #9a9a9a;
 
 }
 

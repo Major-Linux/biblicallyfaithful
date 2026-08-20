@@ -16,6 +16,9 @@
           {% endfor %}
           <a href="{{ post.url }}" class="article-card">
             <h3>{{ post.data.title }}</h3>
+            {% if post.data.synopsis %}
+              <p class="article-card__synopsis">{{ post.data.synopsis }}</p>
+            {% endif %}
             <div class="article-card__meta">
               <span class="article-card__category article-card__category--{{ categoryTag }}">
                 <img src="/assets/images/icons/category-{{ categoryTag }}.png" alt="">

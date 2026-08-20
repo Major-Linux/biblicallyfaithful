@@ -2,7 +2,7 @@
 title: What will the apocalypse look like?
 date: 2026-08-01
 image: /assets/images/end-times.jpg
-synopsis: Everybody knows about the 'Millennium' in the last days right? Well the bible is curiously silent on this issue, apart from one place, and not to be taken literally?
+synopsis: The world and those that do not belong to Christ, DO SET THEMSELVES against Him and his anointed. That is true from the first century to this current one.
 tags:
   - articles
   - end-times
